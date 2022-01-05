@@ -1,12 +1,22 @@
 import React from 'react';
-import Header from './Components/Header/Header';
-import Main from './Components/Pages/main-fon';
+import Header from './Components/Layout/Header/Header';
+import Main from './Components/Pages/main';
+import Footer from './Components/Layout/Footer/Footer';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Components/Layout/Layout';
+import Service from './Components/Pages/Service';
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      <Main />
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route path='/' element={<Main />} />
+          <Route path='/services' element={<Service />}/>
+          {/*<Route path='/company' element={<Company />}/>*/}
+          {/*<Route path='/contacts' element={<Contacts />}/>*/}
+        </Route>
+      </Routes>
     </div>
   );
 };
