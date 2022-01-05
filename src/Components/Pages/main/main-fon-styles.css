@@ -1,0 +1,56 @@
+.main{
+}
+.video{
+  height: 750px;
+  text-align: center;
+}
+.video button{
+  margin-top: 500px;
+  padding: 20px;
+  font-size: 35px;
+  background-color: #9f111b;
+  border: 1px solid #9f111b;
+  color: white;
+  width: 800px;
+}
+.video button:hover{
+  background-color: white;
+  color: #9f111b;
+  transition: 0.5s;
+}
+.bgvideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 60%;
+  width: auto;
+  height: auto;
+  z-index: -9999;
+}
+/*     на верху стили для header'a          */
+
+
+/*     начинаются стили для content'a        */
+.content{
+  height: 500px;
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+}
+.cars{
+  margin-top: 50px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 30% 30% 30%;
+}
+.cars div a{
+  text-decoration: none;
+  color: white;
+}
+.cars div{
+  padding: 10px;
+  background-color: gray;
+  border-radius: 15px;
+}

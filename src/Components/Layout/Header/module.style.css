@@ -23,12 +23,40 @@ header{
 }
 .center-nav span{
   color: #9f111b;
-  width: 400px;
+  width: 45%;
   display: flex;   /*   стиль для того чтобы дать ширину центральной навигации   */
   justify-content: space-between;
 }
+.center-nav a{
+  text-decoration: none;
+  color: #9f111b;
+}
+.center-nav li{
+  padding: 5px 15px;
+  border: 1px solid #9f111b;
+}
+.center-nav li a:hover{
+  color: white;
+}
+
+.center-nav li:hover{
+  background-color: #9f111b;
+  color: white;
+}
+
 
 .right-nav{
-  display: flex;
-  list-style: none;   /*    стиль для центральной навигации     */
+  color: #9f111b; /*    стиль для центральной навигации     */
+}
+.right-nav button{
+  background-color: inherit;
+  border: 1px solid #9f111b;
+  padding: 5px 15px;
+  font-size: 19px;
+  color: #9f111b;
+}
+.right-nav button:hover{
+  background-color: #9f111b;
+  color: white;
+  transition: 0.3s;
 }
