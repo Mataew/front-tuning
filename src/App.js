@@ -7,6 +7,7 @@ import { Layout } from './Components/Layout/Layout';
 import Contacts from './Components/Pages/contacts/contacts';
 import Company from './Components/Pages/company/company';
 import SigninPage from './Components/Pages/Sign/SigninPage';
+import { Service } from './Components/Pages/Service/Service';
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Main />} />
-          {/*<Route path='/services' element={<Service />}/>*/}
+          <Route path='/services' element={<Service />}/>
           <Route path='/company' element={<Company />}/>
           <Route path='/contacts' element={<Contacts />}/>
           <Route path='/signIn' element={<SigninPage />}/>
