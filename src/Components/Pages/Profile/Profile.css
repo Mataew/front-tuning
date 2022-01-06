@@ -1,0 +1,18 @@
+.main {
+    margin-top: 83px;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.cart {
+    width: 80%;
+    text-align: center;
+}
