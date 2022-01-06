@@ -1,7 +1,7 @@
 import React from 'react'
 import "./contacts.css"
 
-const contacts = () => {
+const Contacts = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const contacts = () => {
     )
 }
 
-export default contacts
+export default Contacts
