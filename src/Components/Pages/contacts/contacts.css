@@ -1,67 +1,106 @@
-
 .contact {
-    width: 100%;
+  width: 100%;
+  background-image: url("../../../assets/fon-company.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .contact_main {
-    width: 1000px;
-    margin: auto;
-    margin-top: 8.1%;
+  width: 1000px;
+  margin: auto;
+  margin-top: 8.1%;
+  box-shadow: 0px 0px 20px 3px #ff3d3d;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 50px;
 }
 
 .contact_flex {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .contact_flex_leftBlock {
-    width: 600px;
+  width: 600px;
 }
 
 .contact_flex_rightBlock {
-    width: 300px;
+  width: 300px;
 }
 
 .contact_infoBlock {
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid black;
-    margin-bottom: 15px;
-    text-align: center;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid black;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .contact_infoBlock img {
-    width: 100%;
-    border-radius: 6px 6px 0 0;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
 }
 
 p {
-    color: red;
-    margin-left: 10px;
+  color: red;
+  margin-left: 10px;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .contact_garage {
-    width: 600px;
-    height: 440px;
+  width: 600px;
+  height: 440px;
 }
 
 .contact_garage img {
-    width: 100%;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 8px;
 }
 
 .contact_aboutUs a {
-    margin-right: 25px;
-    text-align: center;
+  margin-right: 25px;
+  text-align: center;
 }
 
 hr {
-    width: 600px;
-    border-bottom: 2px solid black;
+  width: 600px;
+  border-bottom: 2px solid black;
 }
 
+iframe {
+  border: 2px solid black;
+  border-radius: 8px;
+}
 
+.contact_whatsapp {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 3px;
+  padding-left: 3px;
+}
 
+.contact_email {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
+.contact_address {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.contact_time {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-left: 3px;
+}

@@ -9,14 +9,45 @@ const Contacts = () => {
         <div className="contact_flex">
           <div className="contact_flex_leftBlock">
             <h3>Наш адрес</h3>
-            <p>г.Грозный, ул.Трошева 7 (Гараж "Медина")</p>
+            <div className="contact_address">
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/3203/3203071.png"
+                  alt=""
+                />
+              </a>
+            </div>
             <h3>Часы работы</h3>
-            <p>Работаем с 8:00 до 20:00 без выходных</p>
+            <div className="contact_time">
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons.flaticon.com/png/128/3371/premium/3371432.png?token=exp=1641479639~hmac=3921a365afe8601ea94ef20e09b7d265"
+                  alt=""
+                />
+              </a>
+            </div>
             <h3>Телефон</h3>
-            <p>+7 (948) - 567 - 45 - 57</p>
-            <p>+7 (989) - 565 - 38 - 87</p>
+            <div className="contact_whatsapp">
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons.flaticon.com/png/128/5585/premium/5585846.png?token=exp=1641479111~hmac=a6a18a9ebf22b08314dfb9ca844f056c"
+                  alt=""
+                />
+              </a>
+            </div>
             <h3>Электронная почта</h3>
-            <p><a href="">tuning230815@gmail.com</a></p>
+            <div className="contact_email">
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/1782/1782765.png"
+                  alt=""
+                />
+              </a>
+            </div>
             <h3>Схема проезда</h3>
             <div className="contact_map">
               <iframe
@@ -57,6 +88,14 @@ const Contacts = () => {
                   alt=""
                 />
               </a>
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/2111/2111710.png"
+                  alt=""
+                />
+              </a>
+              <a href=""><img width={40} src="https://cdn-icons.flaticon.com/png/128/3670/premium/3670302.png?token=exp=1641480135~hmac=f9cb4efcc5f1e496054576ff1a2d89f2" alt="" /></a>
             </div>
           </div>
           <div className="contact_flex_rightBlock">
