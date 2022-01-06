@@ -1,4 +1,4 @@
-import './service.css'
+import './Service.css'
 import React from 'react'
 
 const Service = () => {
