@@ -1,0 +1,67 @@
+
+.contact {
+    width: 100%;
+}
+
+.contact_main {
+    width: 1000px;
+    margin: auto;
+    margin-top: 8.1%;
+}
+
+.contact_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_flex_leftBlock {
+    width: 600px;
+}
+
+.contact_flex_rightBlock {
+    width: 300px;
+}
+
+.contact_infoBlock {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contact_infoBlock img {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+}
+
+p {
+    color: red;
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contact_garage {
+    width: 600px;
+    height: 440px;
+}
+
+.contact_garage img {
+    width: 100%;
+}
+
+.contact_aboutUs a {
+    margin-right: 25px;
+    text-align: center;
+}
+
+hr {
+    width: 600px;
+    border-bottom: 2px solid black;
+}
+
+
+
