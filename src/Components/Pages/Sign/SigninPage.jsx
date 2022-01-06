@@ -1,12 +1,11 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
 import SignupPage from "./SignupPage";
 import { Link } from "react-router-dom";
+import "./Signin.css"
 
 const SigninPage = () => {
   return (
-    <div>
-
+    <div className="SigninBlock">
         <Link to="/signUp">Регистрация</Link>
     </div>
   );
