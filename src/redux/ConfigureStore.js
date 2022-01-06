@@ -2,9 +2,11 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import application from './reducerSign';
+import { serviceReducer } from './reducerService';
 
 
-const combineReducer = combineReducers({ application })
+
+const combineReducer = combineReducers({ application, serviceReducer })
 
 const store = createStore(combineReducer, composeWithDevTools( applyMiddleware(thunk) ));
 
