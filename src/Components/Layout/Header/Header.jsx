@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import './module.style.css'
@@ -20,7 +20,7 @@ const Header = () => {
         </span>
       </ul>
       <div className='right-nav'>
-        <button>Войти</button>
+        <Link to='/signIn'>Войти</Link>
       </div>
     </header>
   );

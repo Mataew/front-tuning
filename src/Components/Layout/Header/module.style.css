@@ -48,15 +48,13 @@ header{
 .right-nav{
   color: #9f111b; /*    стиль для центральной навигации     */
 }
-.right-nav button{
-  background-color: inherit;
-  border: 1px solid #9f111b;
+.right-nav a{
   padding: 5px 15px;
-  font-size: 19px;
+  border: 1px solid #9f111b;
+  text-decoration: none;
   color: #9f111b;
 }
-.right-nav button:hover{
+.right-nav a:hover{
   background-color: #9f111b;
   color: white;
-  transition: 0.3s;
 }
