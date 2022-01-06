@@ -4,7 +4,7 @@ const Company = () => {
   return (
     <div className='company-content'>
       <div className="container">
-        <h2>О компании</h2>
+        <h1>О компании</h1>
         <div className="company-main">
           <div className="company-item">
            <div className="company-img">
@@ -57,42 +57,65 @@ const Company = () => {
         </div>
           <div className='company-opportunities'>
             <h2>Наши возможности</h2>
+            <div className="company-opportunities-wrapp">
             <div className='opportunities-item'>
              <ul>
                 <li>
                   <img src='https://www.hard-tuning.ru/local/templates/hardtuned_new/img/delivery-truck-about.png'
-                       alt="#" className='opportunities-icon'/>
+                       alt="#" className='opportunities-icon-1'/>
                   Быстрая доставка
                 </li>
                 <li>
                   <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/piggy-bank-about.png"
-                       alt="#" className='opportunities-icon'/>
+                       alt="#" className='opportunities-icon-2'/>
                   Низкие цены</li>
                <li>
                  <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/list-about.png"
-                      alt="" className='opportunities-icon'/>
-                 Широкий ассортимент
+                      alt="" className='opportunities-icon-3'/> Широкий ассортимент
                </li>
                <li>
                  <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/delivery-about.png"
-                      alt="" className='opportunities-icon'/>
-                 Надежные поставщики
+                      alt="" className='opportunities-icon-4'/>Надежные поставщики
                </li>
              </ul>
             </div>
             <div className='opportunities-item'>
-             <ul>
-               <li></li>
-               <li></li>
-               <li></li>
-             </ul>
+              <ul>
+                <li>
+                  <img src='https://www.hard-tuning.ru/local/templates/hardtuned_new/img/star-about.png'
+                       alt="#" className='opportunities-icon-5'/>
+                   Отличное обслуживание
+                </li>
+                <li>
+                  <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/headset-about.png"
+                       alt="#" className='opportunities-icon-6'/>Профессиональные менеджеры</li>
+                <li>
+                  <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/shield-about.png"
+                       alt="" className='opportunities-icon-7'/>Гарантия на все товары
+                </li>
+
+              </ul>
             </div>
             <div className='opportunities-item'>
-             <ul>
-               <li></li>
-               <li></li>
-               <li></li>
-             </ul>
+              <ul>
+                <li>
+                  <img src='https://www.hard-tuning.ru/local/templates/hardtuned_new/img/box-about.png'
+                       alt="#" className='opportunities-icon-8'/>
+                  Сезонные скидки
+                </li>
+                <li>
+                  <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/credit-card-about.png"
+                       alt="#" className='opportunities-icon-9'/>
+                  Программа лояльности
+                </li>
+                <li>
+                  <img src="https://www.hard-tuning.ru/local/templates/hardtuned_new/img/packaging-about.png"
+                       alt="" className='opportunities-icon-10'/>
+                  Бонусы и подарки
+                </li>
+
+              </ul>
+            </div>
             </div>
           </div>
     </div>
