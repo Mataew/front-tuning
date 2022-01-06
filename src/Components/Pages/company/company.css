@@ -1,0 +1,90 @@
+.company-content {
+  padding-top: 100px;
+}
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.company-main {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(34, 60, 80, 0.2);
+  padding: 10px;
+
+
+}
+.company-img {
+  width: 300px;
+}
+.company-img + .company-img {
+  margin-top: 10px;
+}
+.company-img img {
+  width: 100%;
+  border-radius: 5px;
+
+}
+
+.company-title {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+  width: 600px;
+}
+.company-desc {
+  width: 600px;
+  font-weight: normal;
+  padding: 10px;
+}
+
+.company-text {
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(34, 60, 80, 0.2);
+  padding: 10px 20px;
+}
+.company-text h2 {
+  border-bottom: 1px solid lightgrey ;
+  padding-bottom: 20px;
+}
+
+.company-carts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.company-carts-item {
+  width: 220px;
+}
+.company-carts-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+.company-opportunities {
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+
+  box-shadow: 0 0 10px 0 rgba(34, 60, 80, 0.2);
+}
+.company-opportunities h2 {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
+}
+.opportunities-item ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opportunities-item li {
+  line-height: 25px;
+  padding-left: 10px;
+}
+.opportunities-icon {
+  position: relative;
+  top: 5px;
+}
