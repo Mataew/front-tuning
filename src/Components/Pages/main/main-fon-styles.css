@@ -1,11 +1,10 @@
 .main{
 }
 .video{
-  height: 750px;
   text-align: center;
 }
 .video button{
-  margin-top: 500px;
+  margin-top: 35%;
   padding: 20px;
   font-size: 35px;
   background-color: #9f111b;
@@ -33,14 +32,14 @@
 
 /*     начинаются стили для content'a        */
 .content{
-  height: 500px;
   width: 1000px;
   margin: auto;
+  margin-top: 13%;
+  padding: 1% 5% 5% 5%;
   text-align: center;
   background-color: white;
 }
 .cars{
-  margin-top: 50px;
   display: grid;
   gap: 20px;
   grid-template-columns: 30% 30% 30%;
