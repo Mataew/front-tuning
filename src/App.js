@@ -7,6 +7,7 @@ import Company from './Components/Pages/company/company';
 import SigninPage from './Components/Pages/Sign/SigninPage';
 import Service from './Components/Pages/Service/Service';
 import Profile from './Components/Pages/Profile/profile';
+import SignupPage from './Components/Pages/Sign/SignupPage';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/profile' element={<Profile />}/>
           <Route path='/contacts' element={<Contacts />}/>
           <Route path='/signIn' element={<SigninPage />}/>
+          <Route path='/signUp' element={<SignupPage />}/>
         </Route>
       </Routes>
     </div>
