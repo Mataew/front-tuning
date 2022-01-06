@@ -1,10 +1,12 @@
 import './service.css'
 import React from 'react'
 
-export const Service = () => {
+const Service = () => {
     return (
         <div>
             
         </div>
     )
 }
+
+export default Service
