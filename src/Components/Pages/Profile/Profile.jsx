@@ -3,7 +3,7 @@ import './Profile.css'
 
 const Profile = () => {
     return (
-        <div className='main'>
+        <div className='mainProfile'>
             <div className="sidebar">
                 <h1>Мой профиль</h1>
                 <span>Имя</span>
