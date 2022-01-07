@@ -1,8 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Profile.css'
 
 const Profile = () => {
 
+
+    const handleLogout = () => {
+        localStorage.removeItem("token")
+    }
     
 
     return (
@@ -13,7 +18,7 @@ const Profile = () => {
                 <span>  Фамилия</span>
                 <h4>Номер телефона:</h4>
                 <span>012784</span>
-                <button>Выйти</button>
+                <NavLink onClick={handleLogout} to='/'>Выйти</NavLink>
             </div>
             <div className="cart">
                 <h1>Мои заказы</h1>
