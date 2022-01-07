@@ -11,19 +11,9 @@ const Content = () => {
   }, [])
 
   return (
-    <div className='content'>
+    <div className='content-cars'>
       <h1>Выберите марку</h1>
-      { cars.map((item) => {
-
-        const img = `${item.image}`
-
-        return (
-          <div>
-            <img src={img}/>
-          </div>
-
-        )
-      })}
+      <div></div>
     </div>
   );
 };
