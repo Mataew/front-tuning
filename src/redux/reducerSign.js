@@ -17,6 +17,7 @@ export default function application(state = initialStateSign, action) {
       return {
         ...state,
         signingUp: false,
+        error:null
       };
     case "application/signup/rejected":
       return {
@@ -34,7 +35,8 @@ export default function application(state = initialStateSign, action) {
         return {
           ...state,
           signingIn: false,
-          token: action.payload.token
+          token: action.payload.token,
+          error: null
         };
       case "application/signin/rejected":
         return {
@@ -62,8 +64,8 @@ export const createUser = (login, password, /*firstName*/) => {
 
     const json = await responce.json();
 
-    if (json.error) {
-      dispatch({ type: "application/signup/rejected", error: json.error });
+    if (json) {
+      dispatch({ type: "application/signup/rejected", error: json });
     } else {
       dispatch({ type: "application/signup/fulfiled", payload: json });
     }
@@ -83,9 +85,10 @@ export const auth = (login, password) => {
     });
 
     const json = await responce.json();
+    console.log(json)
 
-    if (json.error) {
-      dispatch({ type: "application/signin/rejected", error: json.e.message });
+    if (json) {
+      dispatch({ type: "application/signin/rejected", error: json });
     } else {
       dispatch({ type: "application/signin/fulfiled", payload: json });
       localStorage.setItem("token", json.token)

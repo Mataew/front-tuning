@@ -49,9 +49,10 @@ const SignupPage = () => {
   //   firstName === "" ? setBlurFirstName(false) : setBlurFirstName(true)
   // }
 
+  const good = complete === true ? "Вы успешно зарегистрировались" : ""
+
   return (
     <div className="SignUpMain">
-      {error}
       <div className="SignWindow">
         <div className="SignUpBlock">
           <input
@@ -111,8 +112,8 @@ const SignupPage = () => {
         >
           Зарегистрироваться
         </button>
-        <div className="NoEmpty">
-          {complete === true ? "Вы успешно зарегистрировались" : ""}
+        <div className={error === null ? "NoEmpty" : "BlockError"}>
+        {error === null ? good : error}
         </div>
         <div className="BackLinkBlock">
           <Link className="LinkMain" to="/signIn">

@@ -69,4 +69,8 @@
 .Back {
     font-size: 18px;
 }
+
+.BlockError {
+    color: red;
+}
   
