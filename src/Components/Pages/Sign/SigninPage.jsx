@@ -39,13 +39,13 @@ const SigninPage = () => {
     password === "" ? setBlurPassword(false) : setBlurPassword(true);
   };
 
-  const good = complete === true ? "Вы успешно авторизовались" : ""
+  const good = complete === true ? "Вы успешно авторизовались" : "";
 
   return (
     <div className="SignUpMain">
       <div className="SignWindow">
         <div className="SignUpBlock">
-        {/* <div className="BlockError">{error}</div> */}
+          {/* <div className="BlockError">{error}</div> */}
           <input
             className="loginINP"
             onBlur={handleBlurLogin}
@@ -83,19 +83,22 @@ const SigninPage = () => {
           className="RegisterBTN"
           onClick={handleSubmit}
           disabled={!login || !password || signingIn}
-        >
-          Войти
+        ><Link to="/">Войти</Link>
         </button>
         <div className={error === null ? "NoEmpty" : "BlockError"}>
           {error === null ? good : error}
         </div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
-        <Link className="Link" to="/signUp">Зарегистрироваться</Link>
-      </div>
-      <div className="MainLinkBlock">
-      <Link className="LinkMain" to="/"><button className="getMain">На главную меню</button></Link>
-      </div>
+          <Link className="Link" to="/signUp">
+            Зарегистрироваться
+          </Link>
+        </div>
+        <div className="MainLinkBlock">
+          <Link className="LinkMain" to="/">
+            <button className="getMain">На главную меню</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
