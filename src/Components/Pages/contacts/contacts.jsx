@@ -10,43 +10,48 @@ const Contacts = () => {
           <div className="contact_flex_leftBlock">
             <h3>Наш адрес</h3>
             <div className="contact_address">
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/5192/5192571.png"
-                  alt=""
-                />
-              </a>
+              <div className="img">
+              <img
+                width={40}
+                src="https://cdn-icons-png.flaticon.com/128/5192/5192571.png"
+                alt=""
+              />
+              </div>
+              <span>г.Грозный, ул.Трошева 7 (гараж "Медина")</span>
             </div>
             <h3>Часы работы</h3>
             <div className="contact_time">
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/47/47654.png"
-                  alt=""
-                />
-              </a>
+              <div className="img">
+              <img
+                width={40}
+                src="https://cdn-icons-png.flaticon.com/128/47/47654.png"
+                alt=""
+              />
+              </div>
+              <span>Мы работаем с 8:00 до 20:00 без выходных</span>
             </div>
             <h3>Телефон</h3>
             <div className="contact_whatsapp">
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/13/13936.png"
-                  alt=""
-                />
-              </a>
+            <div className="img">
+              <img
+                width={40}
+                src="https://cdn-icons-png.flaticon.com/128/13/13936.png"
+                alt=""
+              />
+              </div>
+              <span>+7 (928) - 345 - 67 - 89</span>
+              <span>+7 (922) - 098 - 76 - 54</span>
             </div>
             <h3>Электронная почта</h3>
             <div className="contact_email">
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/561/561188.png"
-                  alt=""
-                />
-              </a>
+              <div className="img">
+              <img
+                width={40}
+                src="https://cdn-icons-png.flaticon.com/128/561/561188.png"
+                alt=""
+              />
+              </div>
+              <span>virtuning12332@gmail.com</span>
             </div>
             <h3>Схема проезда</h3>
             <div className="contact_map">
@@ -62,46 +67,6 @@ const Contacts = () => {
                 src="https://avatars.mds.yandex.net/get-altay/4054675/2a00000176634eb9b64a78180efa1a9b9ea7/XXL"
                 alt=""
               />
-            </div>
-            <h3>Связь с нами</h3>
-            <div className="contact_aboutUs">
-              <p>Наши соц. страницы</p>
-              <hr />
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/49/49444.png"
-                  alt=""
-                />
-              </a>
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png"
-                  alt=""
-                />
-              </a>
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png"
-                  alt=""
-                />
-              </a>
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/2111/2111710.png"
-                  alt=""
-                />
-              </a>
-              <a href="">
-                <img
-                  width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/49/49351.png"
-                  alt=""
-                />
-              </a>
             </div>
           </div>
           <div className="contact_flex_rightBlock">
@@ -153,6 +118,44 @@ const Contacts = () => {
             </div>
           </div>
         </div>
+            <div className="contact_aboutUs">
+              <hr />
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/49/49444.png"
+                  alt=""
+                />
+              </a>
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png"
+                  alt=""
+                />
+              </a>
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png"
+                  alt=""
+                />
+              </a>
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/2111/2111710.png"
+                  alt=""
+                />
+              </a>
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/49/49351.png"
+                  alt=""
+                />
+              </a>
+            </div>
       </div>
     </div>
   );
