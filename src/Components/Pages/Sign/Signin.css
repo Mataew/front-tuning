@@ -86,3 +86,7 @@
 .BlockError {
     color: red;
 }
+
+.entry {
+    width: 100%;
+}
