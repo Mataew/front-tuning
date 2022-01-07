@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadCars } from '../../../redux/reducerCars';
 
 const Content = () => {
+
+  const cars = useSelector(state => state.carsReducer.cars)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadCars())
+  }, [])
+
   return (
     <div className='content'>
       <h1>Выберите марку</h1>
-      <div className='cars'>
-        <div>
-          <a href=''>asdas</a>
-        </div>
-        <div>
-          <a href=''>asdas</a>
-        </div>
-        <div>
-          <a href=''>asdas</a>
-        </div>
-        <div>
-          <a href=''>asdas</a>
-        </div>
-        <div>
-          <a href=''>asdas</a>
-        </div>
-        <div>
-          <a href=''>asdas</a>
-        </div>
-      </div>
+      { cars.map((item) => {
+
+        const img = `${item.image}`
+
+        return (
+          <div>
+            <img src={img}/>
+          </div>
+
+        )
+      })}
     </div>
   );
 };
