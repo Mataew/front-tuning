@@ -33,7 +33,7 @@
   width: 100%;
   border-radius: 8px;
   border: 2px solid black;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -92,15 +92,15 @@ iframe {
 }
 
 .contact_address {
-    border: 2px solid black;
-    border-radius: 8px;
-    padding-top: 3px;
-    padding-left: 3px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 3px;
+  padding-left: 3px;
 }
 
 .contact_time {
-    border: 2px solid black;
-    border-radius: 8px;
-    padding-top: 3px;
-    padding-left: 3px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-top: 3px;
+  padding-left: 3px;
 }

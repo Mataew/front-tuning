@@ -13,7 +13,7 @@ const Contacts = () => {
               <a href="">
                 <img
                   width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/3203/3203071.png"
+                  src="https://cdn-icons-png.flaticon.com/128/5192/5192571.png"
                   alt=""
                 />
               </a>
@@ -23,7 +23,7 @@ const Contacts = () => {
               <a href="">
                 <img
                   width={40}
-                  src="https://cdn-icons.flaticon.com/png/128/3371/premium/3371432.png?token=exp=1641479639~hmac=3921a365afe8601ea94ef20e09b7d265"
+                  src="https://cdn-icons-png.flaticon.com/128/47/47654.png"
                   alt=""
                 />
               </a>
@@ -33,7 +33,7 @@ const Contacts = () => {
               <a href="">
                 <img
                   width={40}
-                  src="https://cdn-icons.flaticon.com/png/128/5585/premium/5585846.png?token=exp=1641479111~hmac=a6a18a9ebf22b08314dfb9ca844f056c"
+                  src="https://cdn-icons-png.flaticon.com/128/13/13936.png"
                   alt=""
                 />
               </a>
@@ -43,7 +43,7 @@ const Contacts = () => {
               <a href="">
                 <img
                   width={40}
-                  src="https://cdn-icons-png.flaticon.com/128/1782/1782765.png"
+                  src="https://cdn-icons-png.flaticon.com/128/561/561188.png"
                   alt=""
                 />
               </a>
@@ -70,7 +70,7 @@ const Contacts = () => {
               <a href="">
                 <img
                   width={40}
-                  src="https://cdn-icons.flaticon.com/png/128/4494/premium/4494490.png?token=exp=1641472861~hmac=c3a97f769eb0d0a775e531fbdea154e7"
+                  src="https://cdn-icons-png.flaticon.com/128/49/49444.png"
                   alt=""
                 />
               </a>
@@ -84,7 +84,7 @@ const Contacts = () => {
               <a href="">
                 <img
                   width={40}
-                  src="https://cdn-icons.flaticon.com/png/128/4494/premium/4494464.png?token=exp=1641472861~hmac=2839e303065e7d248990f8e36cfe46f7"
+                  src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png"
                   alt=""
                 />
               </a>
@@ -95,7 +95,13 @@ const Contacts = () => {
                   alt=""
                 />
               </a>
-              <a href=""><img width={40} src="https://cdn-icons.flaticon.com/png/128/3670/premium/3670302.png?token=exp=1641480135~hmac=f9cb4efcc5f1e496054576ff1a2d89f2" alt="" /></a>
+              <a href="">
+                <img
+                  width={40}
+                  src="https://cdn-icons-png.flaticon.com/128/49/49351.png"
+                  alt=""
+                />
+              </a>
             </div>
           </div>
           <div className="contact_flex_rightBlock">
