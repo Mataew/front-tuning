@@ -3,30 +3,35 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadService } from "../../../redux/reducerService";
-import pathLogo from '../../../assets/logos/1kamaz.png'
+import pathLogo from "../../../assets/services/auto-shtori.jpg";
+import { Link, NavLink } from "react-router-dom";
 
 const Service = () => {
   const services = useSelector((state) => state.serviceReducer.service);
-  const dispatch = useDispatch()
-  useEffect(()=>{
-      dispatch(loadService())
-  }, [dispatch])
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadService());
+  }, [dispatch]);
   return (
     <div className="sevice_container">
-        <h1>Список наших услуг</h1>
-        <div className="srvice_services">
-      {services.map((item) => {
-        return (
+      <h1>Список наших услуг</h1>
+      <div className="srvice_services">
+        <Link to='/' className="sevice_btn">Хочу тюнинг</Link>
+        {services.map((item) => {
+        
+          const img = item.img
+
+          return (
             <div className="service_cart">
-              {/* <img src={item.img}/> */}
-              <div className="service_name">
-              {item.name}
+              <div className="service_image">
+                <img src={img} />
               </div>
-              <button>Добавить услугу</button>
+              <div className="service_name">{item.name}</div>
             </div>
-        );
-      })}
-    </div>
+          );
+
+        })}
+      </div>
     </div>
   );
 };

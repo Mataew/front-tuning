@@ -1,3 +1,23 @@
+.sevice_container {
+    width: 1000px;
+    margin: 70px auto;
+}
+
 .srvice_services{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.service_cart {
+    margin-top: 30px;
+    width: 500px;
+    text-align: center;
+}
+
+.sevice_btn {
+    position: absolute;
+    top: 250px;
+    left: 450px;
 }
