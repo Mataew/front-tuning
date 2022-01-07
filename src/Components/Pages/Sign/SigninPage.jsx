@@ -39,11 +39,13 @@ const SigninPage = () => {
     password === "" ? setBlurPassword(false) : setBlurPassword(true);
   };
 
+  const good = complete === true ? "Вы успешно авторизовались" : ""
+
   return (
     <div className="SignUpMain">
-      {error}
       <div className="SignWindow">
         <div className="SignUpBlock">
+        {/* <div className="BlockError">{error}</div> */}
           <input
             className="loginINP"
             onBlur={handleBlurLogin}
@@ -84,8 +86,8 @@ const SigninPage = () => {
         >
           Войти
         </button>
-        <div className="NoEmpty">
-          {complete === true ? "Вы успешно авторизовались" : ""}
+        <div className={error === null ? "NoEmpty" : "BlockError"}>
+          {error === null ? good : error}
         </div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
