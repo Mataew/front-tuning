@@ -18,13 +18,11 @@ const Service = () => {
       <div className="srvice_services">
         <Link to='/' className="sevice_btn">Хочу тюнинг</Link>
         {services.map((item) => {
-        
-          const img = item.img
 
           return (
             <div className="service_cart">
               <div className="service_image">
-                <img src={img} />
+                <img src={item.img} />
               </div>
               <div className="service_name">{item.name}</div>
             </div>
