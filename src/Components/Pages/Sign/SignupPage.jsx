@@ -16,6 +16,7 @@ const SignupPage = () => {
   const [complete, setComplete] = useState("");
   const signingUp = useSelector((state) => state.application.signingUp);
   const error = useSelector((state) => state.application.error);
+  const token = useSelector((state) => state.application.token);
 
   const handleChangeLogin = (e) => {
     setLogin(e.target.value);
@@ -34,7 +35,7 @@ const SignupPage = () => {
     setPassword("");
     // setFirstName("")
     setComplete(true);
-    dispatch(createUser(login, password, /*firstName*/));
+    dispatch(createUser(login, password /*firstName*/));
   };
 
   const handleBlurLogin = () => {
@@ -49,7 +50,7 @@ const SignupPage = () => {
   //   firstName === "" ? setBlurFirstName(false) : setBlurFirstName(true)
   // }
 
-  const good = complete === true ? "Вы успешно зарегистрировались" : ""
+  const good = complete === true ? "Вы успешно зарегистрировались" : "";
 
   return (
     <div className="SignUpMain">
@@ -112,8 +113,8 @@ const SignupPage = () => {
         >
           Зарегистрироваться
         </button>
-        <div className={error === null ? "NoEmpty" : "BlockError"}>
-        {error === null ? good : error}
+        <div className={token ? "NoEmpty" : "BlockError"}>
+          {token ? good : error}
         </div>
         <div className="BackLinkBlock">
           <Link className="LinkMain" to="/signIn">

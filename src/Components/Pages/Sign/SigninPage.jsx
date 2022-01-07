@@ -80,21 +80,17 @@ const SigninPage = () => {
             ""
           )}
         </div>
-        <Link className="entry" to={!complete ? "" : "/"}>
-          <button
-            className="RegisterBTN"
-            onClick={handleSubmit}
-            disabled={!login || !password || signingIn}
-          >
-            Войти
-          </button>
-        </Link>
-        <div
-          className={
-            token !== "Неверный логин или пароль" ? "NoEmpty" : "BlockError"
-          }
+
+        <button
+          className="RegisterBTN"
+          onClick={handleSubmit}
+          disabled={!login || !password || signingIn}
         >
-          {token !== "Неверный логин или пароль" ? good : token}
+          Войти
+        </button>
+
+        <div className={token ? "NoEmpty" : "BlockError"}>
+          {token ? good : "Неверный логин или пароль"}
         </div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
