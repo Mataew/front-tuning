@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 import './module.style.css'
@@ -9,20 +9,11 @@ const Header = () => {
 
   const token = useSelector(state => state.application.token)
   console.log(token)
-  const [tokenValid, setTokenValid ] = useState(false)
-
-  const tokenValidation = () => {
-    if (token){
-      setTokenValid(true)
-    } else {
-      setTokenValid(false)
-    }
-  }
 
   return (
     <header>
       <div>
-        <a onClick={() => tokenValidation()} href="/">
+        <a href="/">
           <img className='logo' src={logo}/>
         </a>
       </div>
@@ -34,7 +25,7 @@ const Header = () => {
         </span>
       </ul>
       <div className='right-nav'>
-        { token ?  <Link to='/profile'>Мой профиль</Link> : <Link to='/signIn'>Войти</Link> }
+        { token ? <Link to='/profile'>Мой профиль</Link> : <Link to='/signIn'>Войти</Link> }
       </div>
     </header>
   );

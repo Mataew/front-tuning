@@ -5,6 +5,7 @@ import Video from './Video';
 import Content from './Content';
 
 const Main = () => {
+
   return (
     <div className='main'>
       <Video />
