@@ -8,6 +8,7 @@ import userLogo from "../../../assets/user.png"
 const Header = () => {
 
   const token = useSelector(state => state.application.token)
+
   console.log(token)
 
   return (
