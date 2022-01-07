@@ -81,6 +81,7 @@ export const auth = (login, password) => {
       body: JSON.stringify({ login, password }),
       headers: {
         "Content-type": "application/json",
+        Authorization: "Bearer" + localStorage.getItem("token")
       },
     });
 
@@ -88,10 +89,10 @@ export const auth = (login, password) => {
     console.log(json)
 
     if (json) {
-      dispatch({ type: "application/signin/rejected", error: json });
-    } else {
       dispatch({ type: "application/signin/fulfiled", payload: json });
       localStorage.setItem("token", json.token)
+    } else {
+      dispatch({ type: "application/signin/rejected", error: json });
     }
   }
 }

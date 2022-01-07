@@ -15,6 +15,7 @@ const SigninPage = () => {
   const [complete, setComplete] = useState("");
   const signingIn = useSelector((state) => state.application.signingIn);
   const error = useSelector((state) => state.application.error);
+  const token = useSelector((state) => state.application.token);
 
   const handleChangeLogin = (e) => {
     setLogin(e.target.value);
@@ -79,14 +80,21 @@ const SigninPage = () => {
             ""
           )}
         </div>
-        <button
-          className="RegisterBTN"
-          onClick={handleSubmit}
-          disabled={!login || !password || signingIn}
-        ><Link to="/">Войти</Link>
-        </button>
-        <div className={error === null ? "NoEmpty" : "BlockError"}>
-          {error === null ? good : error}
+        <Link className="entry" to={!complete ? "" : "/"}>
+          <button
+            className="RegisterBTN"
+            onClick={handleSubmit}
+            disabled={!login || !password || signingIn}
+          >
+            Войти
+          </button>
+        </Link>
+        <div
+          className={
+            token !== "Неверный логин или пароль" ? "NoEmpty" : "BlockError"
+          }
+        >
+          {token !== "Неверный логин или пароль" ? good : token}
         </div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
@@ -95,9 +103,9 @@ const SigninPage = () => {
           </Link>
         </div>
         <div className="MainLinkBlock">
-          <Link className="LinkMain" to="/">
+          {/* <Link className="LinkMain" to="/">
             <button className="getMain">На главную меню</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
