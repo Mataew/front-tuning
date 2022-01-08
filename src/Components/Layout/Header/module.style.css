@@ -12,6 +12,7 @@ header{
 }
 
 .logo{
+  /*min-width: 10%;*/
   width: 250px; /* стиль для лого  */
 }
 
@@ -20,11 +21,12 @@ header{
   list-style: none;
   flex: 1;
   margin-left: 100px;
-  font-size: 19px;
+  font-size: 110%;
   justify-content: space-between;
 }
 .center-nav span{
   color: white;
+  min-width: 40%;
   width: 45%;
   display: flex;   /*   стиль для того чтобы дать ширину центральной навигации   */
   justify-content: space-between;
