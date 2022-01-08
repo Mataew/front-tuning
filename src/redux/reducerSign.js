@@ -35,7 +35,7 @@ export default function application(state = initialStateSign, action) {
         return {
           ...state,
           signingIn: false,
-          token: action.payload.token,
+          token: action.payload,
           error: action.error
         };
       case "application/signin/rejected":
