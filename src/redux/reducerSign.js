@@ -50,13 +50,13 @@ export default function application(state = initialStateSign, action) {
   }
 }
 
-export const createUser = (login, password, /*firstName*/) => {
+export const createUser = (login, password, firstName, lastName, number) => {
   return async (dispatch) => {
     dispatch({ type: "application/signup/pending" });
 
     const responce = await fetch("http://localhost:4000/users", {
       method: "POST",
-      body: JSON.stringify({ login, password, /*firstName*/ }),
+      body: JSON.stringify({ login, password, firstName, lastName, number }),
       headers: {
         "Content-type": "application/json",
       },
@@ -92,7 +92,7 @@ export const auth = (login, password) => {
       dispatch({ type: "application/signin/fulfiled", payload: json });
       localStorage.setItem("token", json.token)
     } else {
-      dispatch({ type: "application/signin/rejected", error: json });
+      dispatch({ type: "application/signin/rejected", error: json.e });
     }
   }
 }
