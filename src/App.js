@@ -26,25 +26,27 @@ const App = () => {
           <Route path='/contacts' element={<Contacts />}/>
           <Route path='/signIn' element={<SigninPage />}/>
           <Route path='/signUp' element={<SignupPage />}/>
-          <Route path='/profile' element={<Navigate to='/signIn' replace/>}/>
+          <Route path='/profile' element={<Navigate to='/' replace/>}/>
         </Route>
       </Routes>
     )
+  } else {
+    return (
+      <div>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route path='/' element={<Main />} />
+            <Route path='/services' element={<Service />}/>
+            <Route path='/company' element={<Company />}/>
+            <Route path='/profile' element={<Profile />}/>
+            <Route path='/contacts' element={<Contacts />}/>
+            <Route path='/signIn' element={<Navigate to='/profile' replace/>}/>
+          </Route>
+        </Routes>
+      </div>
+    );
   }
-  return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route path='/' element={<Main />} />
-          <Route path='/services' element={<Service />}/>
-          <Route path='/company' element={<Company />}/>
-          <Route path='/profile' element={<Profile />}/>
-          <Route path='/contacts' element={<Contacts />}/>
-          {/*<Route path='/signIn' element={<Navigate to='/' replace/>}/>*/}
-        </Route>
-      </Routes>
-    </div>
-  );
+
 
 
 };

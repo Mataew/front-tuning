@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../../redux/reducerSign";
 import "./Signin.css";
+import { Button, TextField } from '@mui/material';
 
 const SigninPage = () => {
   const dispatch = useDispatch();
@@ -46,8 +47,9 @@ const SigninPage = () => {
     <div className="SignUpMain">
       <div className="SignWindow">
         <div className="SignUpBlock">
-          {/* <div className="BlockError">{error}</div> */}
-          <input
+          <TextField
+            error={ !blurLogin ? true : false }
+            id={ !blurLogin ? 'outlined-error' : 'outlined-basic'} label={ !blurLogin ? 'Поле пустое!' : 'Login'} variant="outlined"
             className="loginINP"
             onBlur={handleBlurLogin}
             type="text"
@@ -55,16 +57,11 @@ const SigninPage = () => {
             value={login}
             onChange={(e) => handleChangeLogin(e)}
           />
-          {!blurLogin ? (
-            <div className="empty">
-              <span>Поле ввода не должно быть пустым</span>
-            </div>
-          ) : (
-            ""
-          )}
         </div>
         <div className="SignUpBlock">
-          <input
+          <TextField
+            error={ !blurPassword ? true : false }
+            id={ !blurLogin ? 'outlined-error' : 'outlined-basic'} label={ !blurPassword ? 'Поле пустое!' : 'Password'} variant="outlined"
             onBlur={handleBlurPassword}
             className="passwordINP"
             type="password"
@@ -72,25 +69,19 @@ const SigninPage = () => {
             value={password}
             onChange={(e) => handleChangePassword(e)}
           />
-          {!blurPassword ? (
-            <div className="empty">
-              <span>Поле ввода не должно быть пустым</span>
-            </div>
-          ) : (
-            ""
-          )}
         </div>
 
-        <button
-          className="RegisterBTN"
+        <Button
+          id="signInBtn"
+          variant='contained'
           onClick={handleSubmit}
           disabled={!login || !password || signingIn}
         >
           Войти
-        </button>
+        </Button>
 
         <div className={token ? "NoEmpty" : "BlockError"}>
-          {token ? good : "Неверный логин или пароль"}
+          {login || password ? good : "Неверный логин или пароль"}
         </div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
@@ -105,8 +96,76 @@ const SigninPage = () => {
         </div>
       </div>
     </div>
-    
+
   );
 };
 
 export default SigninPage;
+
+
+
+
+
+// <div className="SignUpMain">
+//   <div className="SignWindow">
+//     <div className="SignUpBlock">
+//       {/* <div className="BlockError">{error}</div> */}
+//       <input
+//         className="loginINP"
+//         onBlur={handleBlurLogin}
+//         type="text"
+//         placeholder="Введите логин"
+//         value={login}
+//         onChange={(e) => handleChangeLogin(e)}
+//       />
+//       {!blurLogin ? (
+//         <div className="empty">
+//           <span>Поле ввода не должно быть пустым</span>
+//         </div>
+//       ) : (
+//         ""
+//       )}
+//     </div>
+//     <div className="SignUpBlock">
+//       <input
+//         onBlur={handleBlurPassword}
+//         className="passwordINP"
+//         type="password"
+//         placeholder="Введите пароль"
+//         value={password}
+//         onChange={(e) => handleChangePassword(e)}
+//       />
+//       {!blurPassword ? (
+//         <div className="empty">
+//           <span>Поле ввода не должно быть пустым</span>
+//         </div>
+//       ) : (
+//         ""
+//       )}
+//     </div>
+//
+//     <button
+//       className="RegisterBTN"
+//       onClick={handleSubmit}
+//       disabled={!login || !password || signingIn}
+//     >
+//       Войти
+//     </button>
+//
+//     <div className={token ? "NoEmpty" : "BlockError"}>
+//       {token ? good : "Неверный логин или пароль"}
+//     </div>
+//     <div className="SigninBlock">
+//       <span className="textOne">Не зарегистрированы ?</span>
+//       <Link className="Link" to="/signUp">
+//         Зарегистрироваться
+//       </Link>
+//     </div>
+//     <div className="MainLinkBlock">
+//       {/* <Link className="LinkMain" to="/">
+//             <button className="getMain">На главную меню</button>
+//           </Link> */}
+//     </div>
+//   </div>
+// </div>
+
