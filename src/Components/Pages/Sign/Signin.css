@@ -34,11 +34,10 @@
 
 .SignWindow {
     border: 2px solid rgb(184, 39, 39);
-    height: 250px;
-    width: 80%;
+    height: 350px;
+    width: 100%;
     margin: auto;
     border-radius: 30px;
-    background: linear-gradient(66deg, #d42711, #ce5b0f, #bd9619);
 }
 
 .RegisterBTN:hover {
@@ -65,6 +64,7 @@
     padding: 1%;
     margin-top: 5%;
     height: 25px;
+    align-items: center;
 }
 
 .textOne {
@@ -94,4 +94,19 @@
 
 .entry {
     width: 100%;
+}
+
+.firstNameINP {
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.lastNameINP {
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.numberINP {
+    border-radius: 15px;
+    border: 2px solid black;
 }

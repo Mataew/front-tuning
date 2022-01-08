@@ -9,10 +9,14 @@ const SignupPage = () => {
   const dispatch = useDispatch();
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  // const [firstName, setFirstName] = useState("")
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [number, setNumber] = useState("");
   const [blurLogin, setBlurLogin] = useState(true);
   const [blurPassword, setBlurPassword] = useState(true);
-  // const [blurFirstName, setBlurFirstName] = useState(true);
+  const [blurFirstName, setBlurFirstName] = useState(true);
+  const [blurLastName, setBlurLastName] = useState(true);
+  const [blurNumber, setBlurNumber] = useState(true);
   const [complete, setComplete] = useState("");
   const signingUp = useSelector((state) => state.application.signingUp);
   const error = useSelector((state) => state.application.error);
@@ -26,16 +30,26 @@ const SignupPage = () => {
     setPassword(e.target.value);
   };
 
-  // const handleChangeName = (e) => {
-  //   setFirstName(e.target.value)
-  // }
+  const handleChangeName = (e) => {
+    setFirstName(e.target.value);
+  };
+
+  const handleChangeLastName = (e) => {
+    setLastName(e.target.value);
+  };
+
+  const handleChangeNumber = (e) => {
+    setNumber(e.target.value);
+  };
 
   const handleSubmit = () => {
     setLogin("");
     setPassword("");
-    // setFirstName("")
+    setFirstName("");
+    setLastName("");
+    setNumber("");
     setComplete(true);
-    dispatch(createUser(login, password /*firstName*/));
+    dispatch(createUser(login, password, firstName, lastName, number));
   };
 
   const handleBlurLogin = () => {
@@ -46,9 +60,17 @@ const SignupPage = () => {
     password === "" ? setBlurPassword(false) : setBlurPassword(true);
   };
 
-  // const handleBlurFirstName = () => {
-  //   firstName === "" ? setBlurFirstName(false) : setBlurFirstName(true)
-  // }
+  const handleBlurFirstName = () => {
+    firstName === "" ? setBlurFirstName(false) : setBlurFirstName(true);
+  };
+
+  const handleBlurLastName = () => {
+    lastName === "" ? setBlurLastName(false) : setBlurLastName(true);
+  };
+
+  const handleBlurNumber = () => [
+    number === "" ? setBlurNumber(false) : setBlurNumber(true),
+  ];
 
   const good = complete === true ? "Вы успешно зарегистрировались" : "";
 
@@ -89,31 +111,67 @@ const SignupPage = () => {
             ""
           )}
         </div>
-        {/* <div className="SignUpBlock">
-          <input
-            onBlur={handleBlurFirstName}
-            className="passwordINP"
-            type="firstName"
-            placeholder="Введите Имя"
-            value={firstName}
-            onChange={(e) => handleChangeName(e)}
-          />
-          {!blurFirstName ? (
-            <div className="empty">
-              <span>Поле ввода не должно быть пустым</span>
-            </div>
-          ) : (
-            ""
-          )}
-        </div> */}
+        <div className="mainINP">
+          <div className="SignUpBlock">
+            <input
+              onBlur={handleBlurFirstName}
+              className="firstNameINP"
+              type="firstName"
+              placeholder="Введите Имя"
+              value={firstName}
+              onChange={(e) => handleChangeName(e)}
+            />
+            {!blurFirstName ? (
+              <div className="empty">
+                <span>Поле ввода не должно<br /> быть пустым</span>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="SignUpBlock">
+            <input
+              onBlur={handleBlurLastName}
+              className="lastNameINP"
+              type="lastName"
+              placeholder="Введите Фамилию"
+              value={lastName}
+              onChange={(e) => handleChangeLastName(e)}
+            />
+            {!blurLastName ? (
+              <div className="empty">
+                <span>Поле ввода не должно<br /> быть пустым</span>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="SignUpBlock">
+            <input
+              onBlur={handleBlurNumber}
+              className="numberINP"
+              type="number"
+              placeholder="Введите номер телефона"
+              value={number}
+              onChange={(e) => handleChangeNumber(e)}
+            />
+            {!blurNumber ? (
+              <div className="empty">
+                <span>Поле ввода не должно<br /> быть пустым</span>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
         <button
           className="RegisterBTN"
           onClick={handleSubmit}
-          disabled={!login || !password || /*!firstName ||*/ signingUp}
+          disabled={!login || !password || !firstName || signingUp}
         >
           Зарегистрироваться
         </button>
-        <div className={token ? "NoEmpty" : "BlockError"}>
+        <div className={!token ? "NoEmpty" : "BlockError"}>
           {token ? good : error}
         </div>
         <div className="BackLinkBlock">
