@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../../redux/reducerSign";
 import "./SignUp.css";
+import { Button, TextField } from '@mui/material';
 
 const SignupPage = () => {
   const dispatch = useDispatch();
@@ -78,8 +79,10 @@ const SignupPage = () => {
     <div className="SignUpMain">
       <div className="SignWindow">
         <div className="SignUpBlock">
-          <input
-            className="loginINP"
+          <TextField
+          error={ !blurLogin ? true : false }
+          id={ !blurLogin ? 'outlined-error' : 'outlined-basic'} label={ !blurLogin ? 'Поле пустое!' : 'Login'} variant="outlined"
+            // className="loginINP"
             onBlur={handleBlurLogin}
             type="text"
             placeholder="Введите логин"
@@ -95,9 +98,11 @@ const SignupPage = () => {
           )}
         </div>
         <div className="SignUpBlock">
-          <input
+          <TextField
+          error={ !blurPassword ? true : false }
+          id={ !blurPassword ? 'outlined-error' : 'outlined-basic'} label={ !blurPassword ? 'Поле пустое!' : 'Password'} variant="outlined"
             onBlur={handleBlurPassword}
-            className="passwordINP"
+            // className="passwordINP"
             type="password"
             placeholder="Введите пароль"
             value={password}
@@ -113,9 +118,11 @@ const SignupPage = () => {
         </div>
         <div className="mainINP">
           <div className="SignUpBlock">
-            <input
+            <TextField
+            error={ !blurFirstName ? true : false }
+            id={ !blurFirstName ? 'outlined-error' : 'outlined-basic'} label={ !blurFirstName ? 'Поле пустое!' : 'Имя'} variant="outlined"
               onBlur={handleBlurFirstName}
-              className="firstNameINP"
+              // className="firstNameINP"
               type="firstName"
               placeholder="Введите Имя"
               value={firstName}
@@ -130,9 +137,11 @@ const SignupPage = () => {
             )}
           </div>
           <div className="SignUpBlock">
-            <input
+            <TextField
+            error={ !blurLastName ? true : false }
+            id={ !blurLastName ? 'outlined-error' : 'outlined-basic'} label={ !blurLastName ? 'Поле пустое!' : 'Фамилия'} variant="outlined"
               onBlur={handleBlurLastName}
-              className="lastNameINP"
+              // className="lastNameINP"
               type="lastName"
               placeholder="Введите Фамилию"
               value={lastName}
@@ -147,9 +156,11 @@ const SignupPage = () => {
             )}
           </div>
           <div className="SignUpBlock">
-            <input
+            <TextField
+            error={ !blurNumber ? true : false }
+            id={ !blurNumber ? 'outlined-error' : 'outlined-basic'} label={ !blurNumber ? 'Поле пустое!' : 'Номер телефона'} variant="outlined"
               onBlur={handleBlurNumber}
-              className="numberINP"
+              // className="numberINP"
               type="number"
               placeholder="Введите номер телефона"
               value={number}
@@ -167,7 +178,7 @@ const SignupPage = () => {
         <button
           className="RegisterBTN"
           onClick={handleSubmit}
-          disabled={!login || !password || !firstName || signingUp}
+          disabled={!login || !password || !firstName || !lastName || !number || signingUp}
         >
           Зарегистрироваться
         </button>

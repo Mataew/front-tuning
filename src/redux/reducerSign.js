@@ -36,7 +36,7 @@ export default function application(state = initialStateSign, action) {
           ...state,
           signingIn: false,
           token: action.payload.token,
-          error: null
+          error: action.error
         };
       case "application/signin/rejected":
         return {
@@ -89,10 +89,10 @@ export const auth = (login, password) => {
     console.log(json)
 
     if (json) {
-      dispatch({ type: "application/signin/fulfiled", payload: json });
+      dispatch({ type: "application/signin/fulfiled", payload: json, error: json });
       localStorage.setItem("token", json.token)
     } else {
-      dispatch({ type: "application/signin/rejected", error: json.e });
+      dispatch({ type: "application/signin/rejected", error: json });
     }
   }
 }

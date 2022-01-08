@@ -41,7 +41,7 @@ const SigninPage = () => {
     password === "" ? setBlurPassword(false) : setBlurPassword(true);
   };
 
-  const good = complete === true ? "Вы успешно авторизовались" : "";
+  const good = signingIn === true ? "Вы успешно авторизовались" : "Неверный логин или пароль";
 
   return (
     <div className="SignUpMain">
@@ -81,7 +81,7 @@ const SigninPage = () => {
         </Button>
 
         <div className={token ? "NoEmpty" : "BlockError"}>
-          {login || password ? good : "Неверный логин или пароль"}
+          {error}
         </div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
