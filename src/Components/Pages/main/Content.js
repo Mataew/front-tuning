@@ -13,7 +13,11 @@ const Content = () => {
   return (
     <div className='content-cars'>
       <h1>Выберите марку</h1>
-      <div></div>
+      <div>
+        {cars.map((item) => {
+          <img src={item.image} />
+        })}
+      </div>
     </div>
   );
 };

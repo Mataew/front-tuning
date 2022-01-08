@@ -1,53 +1,38 @@
 .SignUpBlock {
     text-align: center;
     padding: 1%;
-    margin-top: 5%;
+    /*margin-top: 5%;*/
     height: 25px;
 }
 
-.RegisterBTN {
-    margin-top: 2%;
-    width: 25%;
-    height: 25px;
-    margin-top: 5%;
+.signInBlock{
+  background-image: url(../../../assets/fon-company.jpg);
 }
 
-.SignUpMain {
-    background-image: url(../../../assets/fon-company.jpg);
-    padding: 15%;
-    text-align: center;
-}
+/*.passwordINP {*/
+/*    width: 25%;*/
+/*    height: 30px;*/
+/*    border-radius: 15px;*/
+/*    border: 2px solid black;*/
+/*}*/
 
-.passwordINP {
-    width: 25%;
-    height: 30px;
-    border-radius: 15px;
-    border: 2px solid black;
-}
-
-.loginINP {
-    width: 25%;
-    height: 30px;
-    border-radius: 15px;
-    border: 2px solid black;
-}
+/*.loginINP {*/
+/*    width: 25%;*/
+/*    height: 30px;*/
+/*    border-radius: 15px;*/
+/*    border: 2px solid black;*/
+/*}*/
 
 .SignWindow {
-    border: 2px solid rgb(184, 39, 39);
+    /*border: 2px solid rgb(184, 39, 39);*/
     height: 350px;
     width: 100%;
     margin: auto;
-    border-radius: 30px;
+    /*border-radius: 30px;*/
+    background: rgb(225,226,233);
+    background: radial-gradient(circle, rgba(225,226,233,1) 0%, rgba(159,159,159,1) 100%);
 }
 
-.RegisterBTN:hover {
-    background-color: green;
-    transition: 1s;
-    box-shadow: inset 0 0 0 23px #53ea93;
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
 
       
 
@@ -65,6 +50,11 @@
     margin-top: 5%;
     height: 25px;
     align-items: center;
+}
+
+#signInBtn {
+  margin-top: 50px;
+  width: 24.5% ;
 }
 
 .textOne {

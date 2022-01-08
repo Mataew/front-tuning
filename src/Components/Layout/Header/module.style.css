@@ -6,8 +6,9 @@ header{
   position: fixed;
   padding: 5px 20px;
   align-items: center;
-  background-color: #000000e6;
+  background-color: rgb(43, 43, 43);
   z-index: 9999;
+  /*background-image: url("https://i.pinimg.com/originals/06/7f/ce/067fcedda7b268a86c83418720b029ee.jpg");*/
 }
 
 .logo{
@@ -23,39 +24,37 @@ header{
   justify-content: space-between;
 }
 .center-nav span{
-  color: #9f111b;
+  color: white;
   width: 45%;
   display: flex;   /*   стиль для того чтобы дать ширину центральной навигации   */
   justify-content: space-between;
 }
 .center-nav a{
   text-decoration: none;
-  color: #9f111b;
+  color: white;
 }
 .center-nav li{
   padding: 5px 15px;
-  border: 1px solid #9f111b;
-}
-.center-nav li a:hover{
-  color: white;
+  border-bottom: 2px solid white;
 }
 
 .center-nav li:hover{
-  background-color: #9f111b;
-  color: white;
 }
 
 
 .right-nav{
-  color: #9f111b; /*    стиль для центральной навигации     */
+  color: white; /*    стиль для центральной навигации     */
 }
 .right-nav a{
-  padding: 5px 15px;
-  border: 1px solid #9f111b;
+  font-size: 23px;
+  padding: 5px 25px;
+  border: 1px solid #007eff;
   text-decoration: none;
-  color: #9f111b;
+  color: #007eff;
+  border-radius: 10px;
 }
 .right-nav a:hover{
-  background-color: #9f111b;
+  background-color: #007eff;
   color: white;
+  transition: 0.5s  ;
 }
