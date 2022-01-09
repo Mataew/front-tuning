@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Content = () => {
 
-  const token = useSelector(state => state.token)
+  const token = localStorage.getItem("token")
 
   const cars = useSelector(state => state.carsReducer.cars)
   console.log(cars)
@@ -16,7 +16,7 @@ const Content = () => {
   }, [])
 
   const handleChooseCar = (auto) => {
-    dispatch(postCart(auto))
+    token ? dispatch(postCart(auto)) : alert("Авторизируйтесь")
   }
 
   return (
@@ -25,7 +25,7 @@ const Content = () => {
       <div className='main-cars-wrapper'>
         { cars.map((item) => {
           return (
-            <Link to='/services' onClick={() => handleChooseCar(item._id)} className='cars-wrapper'>
+            <Link to={ token ? '/services' : '/signIn'} onClick={() => handleChooseCar(item._id)} className='cars-wrapper'>
               <img src={item.image} alt="" className='cars_logo'/>
               <div className='cars-name'>{item.name}</div>
             </Link>
