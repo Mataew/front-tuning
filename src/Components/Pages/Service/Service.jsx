@@ -2,7 +2,7 @@ import "./Service.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { loadService } from "../../../redux/reducerService";
+import { loadService } from "../../../redux/features/reducerService";
 import { Link } from "react-router-dom";
 
 const Service = () => {

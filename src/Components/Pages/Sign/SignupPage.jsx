@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { createUser } from "../../../redux/reducerSign";
+import { createUser } from "../../../redux/features/reducerSign";
 import "./SignUp.css";
 import { Button, TextField } from '@mui/material';
 
