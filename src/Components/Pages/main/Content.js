@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadCars } from '../../../redux/reducerCars';
-import { postCart } from '../../../redux/reducerCart'
+import { loadCars } from '../../../redux/features/reducerCars';
+import { postCart } from '../../../redux/features/reducerCart'
 import { Link } from 'react-router-dom';
 
 const Content = () => {

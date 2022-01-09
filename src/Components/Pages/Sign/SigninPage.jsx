@@ -3,7 +3,7 @@ import SignupPage from "./SignupPage";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { auth } from "../../../redux/reducerSign";
+import { auth } from "../../../redux/features/reducerSign";
 import "./Signin.css";
 import { Button, TextField } from '@mui/material';
 
