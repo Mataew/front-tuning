@@ -81,18 +81,18 @@ export const auth = (login, password) => {
       body: JSON.stringify({ login, password }),
       headers: {
         "Content-type": "application/json",
-        Authorization: "Bearer" + localStorage.getItem("token")
+        // Authorization: "Bearer" + localStorage.getItem("token")
       },
     });
 
     const json = await responce.json();
     console.log(json)
 
-    if (json) {
-      dispatch({ type: "application/signin/fulfiled", payload: json, error: json });
-      localStorage.setItem("token", json.token)
-    } else {
+    if (responce.status === 401) {
       dispatch({ type: "application/signin/rejected", error: json });
+    } else {
+      dispatch({ type: "application/signin/fulfiled", payload: json.token, error: json.error });
+      localStorage.setItem("token", json.token)
     }
   }
 }
