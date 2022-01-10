@@ -9,6 +9,7 @@ import Service from './Components/Pages/Service/Service';
 import Profile from './Components/Pages/Profile/Profile';
 import SignupPage from './Components/Pages/Sign/SignupPage';
 import { useSelector } from 'react-redux';
+import Masters from '../src/Components/Pages/Masters/Masters'
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/signIn' element={<SigninPage />}/>
           <Route path='/signUp' element={<SignupPage />}/>
           <Route path='/profile' element={<Navigate to='/' replace/>}/>
+          <Route path='/masters' element={<Masters />}/>
         </Route>
       </Routes>
     )
@@ -41,6 +43,7 @@ const App = () => {
             <Route path='/profile' element={<Profile />}/>
             <Route path='/contacts' element={<Contacts />}/>
             <Route path='/signIn' element={<Navigate to='/profile' replace/>}/>
+            <Route path='/masters' element={<Masters />}/>
           </Route>
         </Routes>
       </div>
