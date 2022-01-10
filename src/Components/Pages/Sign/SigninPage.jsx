@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../../redux/features/reducerSign";
 import "./Signin.css";
-import { Button, TextField } from '@mui/material';
+import { Button, TextField } from "@mui/material";
 
 const SigninPage = () => {
   const dispatch = useDispatch();
@@ -41,15 +41,21 @@ const SigninPage = () => {
     password === "" ? setBlurPassword(false) : setBlurPassword(true);
   };
 
-  const good = signingIn === true ? "Вы успешно авторизовались" : "Неверный логин или пароль";
+  const good =
+    signingIn === true
+      ? "Вы успешно авторизовались"
+      : "Неверный логин или пароль";
 
   return (
-    <div className="SignUpMain">
+    <div className="SignInMain">
       <div className="SignWindow">
+        <h2 className="title">Вход</h2>
         <div className="SignUpBlock">
           <TextField
-            error={ !blurLogin ? true : false }
-            id={ !blurLogin ? 'outlined-error' : 'outlined-basic'} label={ !blurLogin ? 'Поле пустое!' : 'Login'} variant="outlined"
+            error={!blurLogin ? true : false}
+            id={!blurLogin ? "outlined-error" : "outlined-basic"}
+            label={!blurLogin ? "Поле пустое!" : "Login"}
+            variant="outlined"
             className="loginINP"
             onBlur={handleBlurLogin}
             type="text"
@@ -60,8 +66,10 @@ const SigninPage = () => {
         </div>
         <div className="SignUpBlock">
           <TextField
-            error={ !blurPassword ? true : false }
-            id={ !blurLogin ? 'outlined-error' : 'outlined-basic'} label={ !blurPassword ? 'Поле пустое!' : 'Password'} variant="outlined"
+            error={!blurPassword ? true : false}
+            id={!blurLogin ? "outlined-error" : "outlined-basic"}
+            label={!blurPassword ? "Поле пустое!" : "Password"}
+            variant="outlined"
             onBlur={handleBlurPassword}
             className="passwordINP"
             type="password"
@@ -73,16 +81,14 @@ const SigninPage = () => {
 
         <Button
           id="signInBtn"
-          variant='contained'
+          variant="contained"
           onClick={handleSubmit}
           disabled={!login || !password || signingIn}
         >
           Войти
         </Button>
 
-        <div className={token ? "NoEmpty" : "BlockError"}>
-          {error}
-        </div>
+        <div className={token ? "NoEmpty" : "BlockError"}>{error}</div>
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
           <Link className="Link" to="/signUp">
@@ -96,15 +102,10 @@ const SigninPage = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
 export default SigninPage;
-
-
-
-
 
 // <div className="SignUpMain">
 //   <div className="SignWindow">
@@ -168,4 +169,3 @@ export default SigninPage;
 //     </div>
 //   </div>
 // </div>
-

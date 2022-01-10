@@ -78,11 +78,11 @@ const SignupPage = () => {
     number === "" ? setBlurNumber(false) : setBlurNumber(true),
   ];
 
-  const good = complete === true ? "Вы успешно зарегистрировались" : "";
 
   return (
     <div className="SignUpMain">
-      <div className="SignWindow">
+      <div className="SignUpWindow">
+        <h2 className="title">Регистрация</h2>
         <div className="SignUpBlock">
           <TextField
             error={!blurLogin ? true : false}
@@ -125,79 +125,78 @@ const SignupPage = () => {
             ""
           )}
         </div>
-        <div className="mainINP">
-          <div className="SignUpBlock">
-            <TextField
-              error={!blurFirstName ? true : false}
-              id={!blurFirstName ? "outlined-error" : "outlined-basic"}
-              label={!blurFirstName ? "Поле пустое!" : "Имя"}
-              variant="outlined"
-              onBlur={handleBlurFirstName}
-              // className="firstNameINP"
-              type="firstName"
-              placeholder="Введите Имя"
-              value={firstName}
-              onChange={(e) => handleChangeName(e)}
-            />
-            {!blurFirstName ? (
-              <div className="empty">
-                <span>
-                  Поле ввода не должно
-                  <br /> быть пустым
-                </span>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="SignUpBlock">
-            <TextField
-              error={!blurLastName ? true : false}
-              id={!blurLastName ? "outlined-error" : "outlined-basic"}
-              label={!blurLastName ? "Поле пустое!" : "Фамилия"}
-              variant="outlined"
-              onBlur={handleBlurLastName}
-              // className="lastNameINP"
-              type="lastName"
-              placeholder="Введите Фамилию"
-              value={lastName}
-              onChange={(e) => handleChangeLastName(e)}
-            />
-            {!blurLastName ? (
-              <div className="empty">
-                <span>
-                  Поле ввода не должно
-                  <br /> быть пустым
-                </span>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="SignUpBlock">
-            <TextField
-              error={!blurNumber ? true : false}
-              id={!blurNumber ? "outlined-error" : "outlined-basic"}
-              label={!blurNumber ? "Поле пустое!" : "Номер телефона"}
-              variant="outlined"
-              onBlur={handleBlurNumber}
-              // className="numberINP"
-              type="number"
-              placeholder="Введите номер телефона"
-              value={number}
-              onChange={(e) => handleChangeNumber(e)}
-            />
-            {!blurNumber ? (
-              <div className="empty">
-                <span>
-                  Поле ввода не должно
-                  <br /> быть пустым
-                </span>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+        {/* <div className="mainINP"> */}
+        <div className="SignUpBlock">
+          <TextField
+            error={!blurFirstName ? true : false}
+            id={!blurFirstName ? "outlined-error" : "outlined-basic"}
+            label={!blurFirstName ? "Поле пустое!" : "Имя"}
+            variant="outlined"
+            onBlur={handleBlurFirstName}
+            // className="firstNameINP"
+            type="firstName"
+            placeholder="Введите Имя"
+            value={firstName}
+            onChange={(e) => handleChangeName(e)}
+          />
+          {!blurFirstName ? (
+            <div className="empty">
+              <span>
+                Поле ввода не должно
+                <br /> быть пустым
+              </span>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="SignUpBlock">
+          <TextField
+            error={!blurLastName ? true : false}
+            id={!blurLastName ? "outlined-error" : "outlined-basic"}
+            label={!blurLastName ? "Поле пустое!" : "Фамилия"}
+            variant="outlined"
+            onBlur={handleBlurLastName}
+            // className="lastNameINP"
+            type="lastName"
+            placeholder="Введите Фамилию"
+            value={lastName}
+            onChange={(e) => handleChangeLastName(e)}
+          />
+          {!blurLastName ? (
+            <div className="empty">
+              <span>
+                Поле ввода не должно
+                <br /> быть пустым
+              </span>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="SignUpBlock">
+          <TextField
+            error={!blurNumber ? true : false}
+            id={!blurNumber ? "outlined-error" : "outlined-basic"}
+            label={!blurNumber ? "Поле пустое!" : "Номер телефона"}
+            variant="outlined"
+            onBlur={handleBlurNumber}
+            // className="numberINP"
+            type="number"
+            placeholder="Введите номер телефона"
+            value={number}
+            onChange={(e) => handleChangeNumber(e)}
+          />
+          {!blurNumber ? (
+            <div className="empty">
+              <span>
+                Поле ввода не должно
+                <br /> быть пустым
+              </span>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         {/* <div className="input__wrapper">
           <input
@@ -226,8 +225,7 @@ const SignupPage = () => {
         >
           Зарегистрироваться
         </button>
-        <div className={!token ? "NoEmpty" : "BlockError"}>
-          {token ? good : error}
+        <div className={!error ? "NoEmpty" : "BlockError"}>
         </div>
         <div className="BackLinkBlock">
           <Link className="LinkMain" to="/signIn">
@@ -236,6 +234,7 @@ const SignupPage = () => {
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
