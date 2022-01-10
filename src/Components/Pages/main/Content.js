@@ -9,7 +9,7 @@ const Content = () => {
   const token = localStorage.getItem("token")
 
   const cars = useSelector(state => state.carsReducer.cars)
-  console.log(cars)
+  
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadCars())

@@ -1,8 +1,24 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLoad } from '../../../redux/features/reducerProfile';
 import './Profile.css'
 
 const Profile = () => {
 
+    const dispatch = useDispatch()
+
+    const token = useSelector(state => state.application.token)
+
+    console.log(token);
+
+    useEffect(() => {
+        dispatch(userLoad(token))
+    }, [])
+
+    const user = useSelector(state => state.profilfeReducer.user)
+
+    console.log(user);
 
     const handleLogout = () => {
         localStorage.removeItem("token")
@@ -13,12 +29,16 @@ const Profile = () => {
     return (
         <div className='mainProfile'>
             <div className="sidebar">
-                <h1>Мой профиль</h1>
-                <span>Имя</span>
-                <span>  Фамилия</span>
-                <h4>Номер телефона:</h4>
-                <span>012784</span>
-                <button onClick={handleLogout}>Выйти</button>
+                {user.map((item) => {
+                    return (<>
+                        <h1>Мой профиль</h1>
+                        <span>{item.firstName}</span>
+                        <span>  {item.lastName}</span>
+                        <h4>Номер телефона:</h4>
+                        <span>{item.number}</span>
+                        <button onClick={handleLogout}>Выйти</button>
+                        </>)
+                })}
             </div>
             <div className="cart">
                 <h1>Мои заказы</h1>
