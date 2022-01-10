@@ -1,10 +1,35 @@
 const initialState = {
-    cart: [],
-}
+  user: [],
+  cart: [],
+};
 
 export const profilfeReducer = (state = initialState, action) => {
-    switch(action.type) {
-        default: 
-        return state
+  switch (action.type) {
+    case "user/load/fulfilled":
+      return {
+        ...state,
+        user: [action.payload],
+      };
+    default:
+      return state;
+  }
+};
+
+export const userLoad = (token) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(`http://localhost:4000/user`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      dispatch({ type: "user/load/fulfilled", payload: data });
+    } catch (e) {
+      console.log(e);
     }
-}
+  };
+};
+
+
