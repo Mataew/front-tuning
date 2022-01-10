@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../../redux/reducerSign";
 import "./SignUp.css";
-import { Button, TextField } from '@mui/material';
+import { Button, TextField } from "@mui/material";
 
 const SignupPage = () => {
   const dispatch = useDispatch();
@@ -19,6 +19,7 @@ const SignupPage = () => {
   const [blurLastName, setBlurLastName] = useState(true);
   const [blurNumber, setBlurNumber] = useState(true);
   const [complete, setComplete] = useState("");
+  const [avatar, setAvatar] = useState("");
   const signingUp = useSelector((state) => state.application.signingUp);
   const error = useSelector((state) => state.application.error);
   const token = useSelector((state) => state.application.token);
@@ -41,6 +42,10 @@ const SignupPage = () => {
 
   const handleChangeNumber = (e) => {
     setNumber(e.target.value);
+  };
+
+  const handleChangeAvatar = (e) => {
+    setAvatar(e.target.value);
   };
 
   const handleSubmit = () => {
@@ -80,8 +85,10 @@ const SignupPage = () => {
       <div className="SignWindow">
         <div className="SignUpBlock">
           <TextField
-          error={ !blurLogin ? true : false }
-          id={ !blurLogin ? 'outlined-error' : 'outlined-basic'} label={ !blurLogin ? 'Поле пустое!' : 'Login'} variant="outlined"
+            error={!blurLogin ? true : false}
+            id={!blurLogin ? "outlined-error" : "outlined-basic"}
+            label={!blurLogin ? "Поле пустое!" : "Login"}
+            variant="outlined"
             // className="loginINP"
             onBlur={handleBlurLogin}
             type="text"
@@ -99,8 +106,10 @@ const SignupPage = () => {
         </div>
         <div className="SignUpBlock">
           <TextField
-          error={ !blurPassword ? true : false }
-          id={ !blurPassword ? 'outlined-error' : 'outlined-basic'} label={ !blurPassword ? 'Поле пустое!' : 'Password'} variant="outlined"
+            error={!blurPassword ? true : false}
+            id={!blurPassword ? "outlined-error" : "outlined-basic"}
+            label={!blurPassword ? "Поле пустое!" : "Password"}
+            variant="outlined"
             onBlur={handleBlurPassword}
             // className="passwordINP"
             type="password"
@@ -119,8 +128,10 @@ const SignupPage = () => {
         <div className="mainINP">
           <div className="SignUpBlock">
             <TextField
-            error={ !blurFirstName ? true : false }
-            id={ !blurFirstName ? 'outlined-error' : 'outlined-basic'} label={ !blurFirstName ? 'Поле пустое!' : 'Имя'} variant="outlined"
+              error={!blurFirstName ? true : false}
+              id={!blurFirstName ? "outlined-error" : "outlined-basic"}
+              label={!blurFirstName ? "Поле пустое!" : "Имя"}
+              variant="outlined"
               onBlur={handleBlurFirstName}
               // className="firstNameINP"
               type="firstName"
@@ -130,7 +141,10 @@ const SignupPage = () => {
             />
             {!blurFirstName ? (
               <div className="empty">
-                <span>Поле ввода не должно<br /> быть пустым</span>
+                <span>
+                  Поле ввода не должно
+                  <br /> быть пустым
+                </span>
               </div>
             ) : (
               ""
@@ -138,8 +152,10 @@ const SignupPage = () => {
           </div>
           <div className="SignUpBlock">
             <TextField
-            error={ !blurLastName ? true : false }
-            id={ !blurLastName ? 'outlined-error' : 'outlined-basic'} label={ !blurLastName ? 'Поле пустое!' : 'Фамилия'} variant="outlined"
+              error={!blurLastName ? true : false}
+              id={!blurLastName ? "outlined-error" : "outlined-basic"}
+              label={!blurLastName ? "Поле пустое!" : "Фамилия"}
+              variant="outlined"
               onBlur={handleBlurLastName}
               // className="lastNameINP"
               type="lastName"
@@ -149,7 +165,10 @@ const SignupPage = () => {
             />
             {!blurLastName ? (
               <div className="empty">
-                <span>Поле ввода не должно<br /> быть пустым</span>
+                <span>
+                  Поле ввода не должно
+                  <br /> быть пустым
+                </span>
               </div>
             ) : (
               ""
@@ -157,8 +176,10 @@ const SignupPage = () => {
           </div>
           <div className="SignUpBlock">
             <TextField
-            error={ !blurNumber ? true : false }
-            id={ !blurNumber ? 'outlined-error' : 'outlined-basic'} label={ !blurNumber ? 'Поле пустое!' : 'Номер телефона'} variant="outlined"
+              error={!blurNumber ? true : false}
+              id={!blurNumber ? "outlined-error" : "outlined-basic"}
+              label={!blurNumber ? "Поле пустое!" : "Номер телефона"}
+              variant="outlined"
               onBlur={handleBlurNumber}
               // className="numberINP"
               type="number"
@@ -168,17 +189,40 @@ const SignupPage = () => {
             />
             {!blurNumber ? (
               <div className="empty">
-                <span>Поле ввода не должно<br /> быть пустым</span>
+                <span>
+                  Поле ввода не должно
+                  <br /> быть пустым
+                </span>
               </div>
             ) : (
               ""
             )}
           </div>
         </div>
+        {/* <div className="input__wrapper">
+          <input
+            className="inputInput__file"
+            type="file"
+            value={avatar}
+            onChange={(e) => handleChangeAvatar(e)}
+          />
+          <label htmlFor="input__file" class="input__file-button">
+            <span class="avatarFile">
+              <img className="avatar" src={avatar} alt="avatar" />
+            </span>
+          </label>
+        </div> */}
         <button
           className="RegisterBTN"
           onClick={handleSubmit}
-          disabled={!login || !password || !firstName || !lastName || !number || signingUp}
+          disabled={
+            !login ||
+            !password ||
+            !firstName ||
+            !lastName ||
+            !number ||
+            signingUp
+          }
         >
           Зарегистрироваться
         </button>
