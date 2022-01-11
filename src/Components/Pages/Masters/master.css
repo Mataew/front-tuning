@@ -5,4 +5,31 @@
 .master_main {
   margin: auto;
   margin-top: 10%;
+  text-align: center;
+}
+
+.master_flex_blocks {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.master_block {
+  border: 2px solid black;
+  text-align: center;
+}
+
+.master_price {
+  margin-bottom: 10px;
+}
+
+.master_name {
+  margin-bottom: 10px;
+}
+
+.master_btn {
+  width: 100%;
+  border: 1px solid black;
+  color: white;
+  background-color: blue;
 }
