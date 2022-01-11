@@ -10,11 +10,12 @@ const Profile = () => {
 
     const token = useSelector(state => state.application.token)
 
-    console.log(token);
 
     useEffect(() => {
         dispatch(userLoad(token))
     }, [])
+
+    
 
     const user = useSelector(state => state.profilfeReducer.user)
 

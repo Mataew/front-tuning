@@ -2,17 +2,29 @@ import "./Service.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { userLoad } from "../../../redux/features/reducerProfile";
 import { loadService } from "../../../redux/features/reducerService";
 import { Link } from "react-router-dom";
 import { chooseService } from "../../../redux/features/reducerCart";
 
 const Service = () => {
-
   const services = useSelector((state) => state.serviceReducer.service);
 
-  const carts = useSelector(state => state.cartsReducer.carts)
+  // const carts = useSelector(state => state.cartsReducer.carts)
 
-  console.log(carts);
+  
+  // const token = useSelector(state => state.application.token)
+
+  // useEffect(() => {
+  //     dispatch(userLoad(token))
+  // }, [])
+
+  // const user = useSelector(state => state.profilfeReducer.user)
+
+  // console.log(user);
+  // const userId = user
+
+  // console.log(user);
 
   const dispatch = useDispatch();
 
@@ -21,8 +33,10 @@ const Service = () => {
   }, [dispatch]);
 
   const handleChooseService = (serviceId) => {
-    dispatch(chooseService(serviceId))
-  }
+
+    dispatch(chooseService(serviceId));
+    
+  };
 
   return (
     <div className="sevice-main">

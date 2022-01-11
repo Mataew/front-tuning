@@ -12,12 +12,12 @@ export const cartsReducer = (state = initialState, action) => {
           auto: action.payload,
         },
       };
-      case 'cart/patchService/fulfilled':
+      case 'cart/chooseService/fulfilled':
         return {
           ...state,
-          carts: [...state.carts, {
+          carts: {...state.carts, 
             service: action.payload
-          }]
+          }
         }
     default:
       return state;
@@ -52,19 +52,14 @@ export const postCart = (auto) => {
   };
 };
 
-export const chooseService = (serviceId, cartId) => {
+
+export const chooseService = (serviceId) => {
   return async (dispatch) => {
+    
     try {
-      const response = await fetch(`http://localhost:4000/cart/${cartId}`, {
-        method: 'PATCH',
-        headers: {
-          "Content-type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-        body: JSON.stringify({service: serviceId})
-      });
-      dispatch({type: 'cart/patchService/fulfilled', payload: serviceId})
-      console.log(serviceId);
+     
+      dispatch({type: 'cart/chooseService/fulfilled', payload: serviceId})
+
     } catch (e) {
       console.log(e);
     }
