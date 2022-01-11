@@ -25,6 +25,8 @@ const Profile = () => {
         localStorage.removeItem("token")
         window.location.reload()
     }
+
+    console.log();
     
 
     return (
