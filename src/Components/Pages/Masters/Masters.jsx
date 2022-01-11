@@ -1,11 +1,9 @@
 import React from "react";
 import "./master.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Masters = () => {
   const masters = useSelector((state) => state.masters);
-
-  console.log(masters);
 
   return (
     <div className="master_main">
