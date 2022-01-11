@@ -13,7 +13,7 @@ const Service = () => {
   // const carts = useSelector(state => state.cartsReducer.carts)
 
   
-  // const token = useSelector(state => state.application.token)
+  const token = useSelector(state => state.application.token)
 
   // useEffect(() => {
   //     dispatch(userLoad(token))
@@ -33,9 +33,7 @@ const Service = () => {
   }, [dispatch]);
 
   const handleChooseService = (serviceId) => {
-
-    dispatch(chooseService(serviceId));
-    
+    token ? dispatch(chooseService(serviceId)) : alert('Авторизируйтесь')
   };
 
   return (
@@ -51,7 +49,7 @@ const Service = () => {
                 </div>
                 <div className="service_name">{item.name}</div>
                 <Link
-                  to="#"
+                  to={ token ? '/masters' : ''}
                   className="sevice_btn"
                   onClick={() => handleChooseService(item._id)}
                 >
