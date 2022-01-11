@@ -16,7 +16,7 @@ const App = () => {
 
   const token = useSelector(state => state.application.token)
 
-
+  {console.log(useSelector(state => state.cartsReducer.carts))}
   if (!token){
     return (
       <Routes>

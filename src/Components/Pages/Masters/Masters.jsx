@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import "./master.css";
 import { useDispatch, useSelector } from "react-redux";
-import { loadMaster, masterReducer } from '../../../redux/features/reducerMasters';
-import { Link } from 'react-router-dom';
+import { loadMaster } from "../../../redux/features/reducerMasters";
+import { Link } from "react-router-dom";
+import { postCart } from '../../../redux/features/reducerCart'
 
 const Masters = () => {
   const masters = useSelector((state) => state.masterReducer.masters);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadMaster())
-  }, [])
+    dispatch(loadMaster());
+  }, []);
+
+  const handleChoiceMaster = (master) => {
+    dispatch(postCart(master));
+  };
+
 
   return (
     <div className="master_main">
@@ -21,11 +27,19 @@ const Masters = () => {
       <div className="master_flex_blocks">
         {masters.map((item, index) => {
           return (
-            <div>
-              {item.image}
-              {item.name}
-            </div>
-          )
+            <>
+              <div className="master_block">
+                <div className="master_img">
+                  <img width={180} height={160} src={item.image} alt="" />
+                </div>
+                <div className="master_price"> цена за услуги {item.price}</div>
+                <div className="master_name"> имя {item.name}</div>
+                <Link to="/profile" onClick={() => handleChoiceMaster(item._id)} className="master_btn">
+                  Выбрать
+                </Link>
+              </div>
+            </>
+          );
         })}
       </div>
     </div>

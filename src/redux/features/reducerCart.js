@@ -1,5 +1,5 @@
 const initialState = {
-  carts: [],
+  carts: {},
 };
 
 export const cartsReducer = (state = initialState, action) => {
@@ -15,8 +15,17 @@ export const cartsReducer = (state = initialState, action) => {
       case 'cart/chooseService/fulfilled':
         return {
           ...state,
-          carts: {...state.carts, 
+          carts: {
+            ...state.carts, 
             service: action.payload
+          }
+        }
+      case "cart/postCart/fullfilled":
+        return {
+          ...state,
+          carts: {
+            ...state.carts,
+            masters: action.payload
           }
         }
     default:
@@ -52,12 +61,13 @@ export const postCart = (masters) => {
     try {
       await fetch("http://localhost:4000/cartToken", {
         method: "POST",
-        body: JSON.stringify({ master: masters, auto: initialState.auto, service: initialState.serviceId }),
+        body: JSON.stringify({ masters: masters }),
         headers: {
           "Content-type": "application/json",
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
+      dispatch({ type: "cart/postCart/fullfilled", payload: masters})
     } catch (e) {
       console.log(e)
     }
