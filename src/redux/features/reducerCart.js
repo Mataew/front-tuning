@@ -36,14 +36,14 @@ export const postCart = (auto) => {
     };
 
     try {
-      await fetch("http://localhost:4000/cartToken", {
-        method: "POST",
-        body: JSON.stringify({ auto: auto }),
-        headers: {
-          "Content-type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      // await fetch("http://localhost:4000/cartToken", {
+      //   method: "POST",
+      //   body: JSON.stringify({ auto: auto }),
+      //   headers: {
+      //     "Content-type": "application/json",
+      //     Authorization: "Bearer " + localStorage.getItem("token"),
+      //   },
+      // });
 
       dispatch({ type: "cars/postCart/fulfilled", payload: auto });
     } catch (e) {
