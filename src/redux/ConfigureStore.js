@@ -12,6 +12,6 @@ import { logger } from 'redux-logger/src';
 
 const combineReducer = combineReducers({ application, serviceReducer, profilfeReducer, carsReducer, cartsReducer, masterReducer })
 
-const store = createStore(combineReducer, composeWithDevTools( applyMiddleware(thunk) ));
+const store = createStore(combineReducer, composeWithDevTools( applyMiddleware(thunk, logger) ));
 
 export default store;

@@ -3,7 +3,7 @@ import "./master.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMaster } from "../../../redux/features/reducerMasters";
 import { Link } from "react-router-dom";
-import { postCart } from '../../../redux/features/reducerCart'
+import { chooseMaster } from '../../../redux/features/reducerCart'
 
 const Masters = () => {
   const masters = useSelector((state) => state.masterReducer.masters);
@@ -15,7 +15,7 @@ const Masters = () => {
   }, []);
 
   const handleChoiceMaster = (master) => {
-    dispatch(postCart(master));
+    dispatch(chooseMaster(master));
   };
 
 
@@ -34,7 +34,7 @@ const Masters = () => {
                 </div>
                 <div className="master_price"> цена за услуги {item.price}</div>
                 <div className="master_name"> имя {item.name}</div>
-                <Link to="/profile" onClick={() => handleChoiceMaster(item._id)} className="master_btn">
+                <Link to="/accept" onClick={() => handleChoiceMaster(item._id)} className="master_btn">
                   Выбрать
                 </Link>
               </div>

@@ -20,7 +20,7 @@ export const cartsReducer = (state = initialState, action) => {
             service: action.payload
           }
         }
-      case "cart/postCart/fullfilled":
+      case "cart/chooseMaster/fulfilled":
         return {
           ...state,
           carts: {
@@ -56,20 +56,21 @@ export const chooseService = (serviceId) => {
   };
 };
 
-export const postCart = (masters) => {
+export const chooseMaster = (masters) => {
   return async (dispatch) => {
     try {
-      await fetch("http://localhost:4000/cartToken", {
-        method: "POST",
-        body: JSON.stringify({ masters: masters }),
-        headers: {
-          "Content-type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-      dispatch({ type: "cart/postCart/fullfilled", payload: masters})
+      dispatch({ type: "cart/chooseMaster/fulfilled", payload: masters})
     } catch (e) {
       console.log(e)
     }
   }
 }
+
+// await fetch("http://localhost:4000/cartToken", {
+//         method: "POST",
+//         body: JSON.stringify({ masters: masters, auto: initialState.carts.auto }),
+//         headers: {
+//           "Content-type": "application/json",
+//           Authorization: "Bearer " + localStorage.getItem("token"),
+//         },
+//       });
