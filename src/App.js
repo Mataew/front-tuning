@@ -10,13 +10,13 @@ import Profile from './Components/Pages/Profile/Profile';
 import SignupPage from './Components/Pages/Sign/SignupPage';
 import { useSelector } from 'react-redux';
 import Masters from '../src/Components/Pages/Masters/Masters'
+import Accept from './Components/Pages/Accept/Accept';
 
 
 const App = () => {
 
   const token = useSelector(state => state.application.token)
 
-  {console.log(useSelector(state => state.cartsReducer.carts))}
   if (!token){
     return (
       <Routes>
@@ -44,6 +44,7 @@ const App = () => {
             <Route path='/contacts' element={<Contacts />}/>
             <Route path='/signIn' element={<Navigate to='/profile' replace/>}/>
             <Route path='/masters' element={<Masters />}/>
+            <Route path='/accept' element={<Accept />} />
           </Route>
         </Routes>
       </div>

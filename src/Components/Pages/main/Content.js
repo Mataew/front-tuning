@@ -25,7 +25,7 @@ const Content = () => {
       <div className='main-cars-wrapper'>
         { cars.map((item) => {
           return (
-            <Link to={ token ? '/services' : '/signIn'} onClick={() => handleChooseCar(item._id)} className='cars-wrapper'>
+            <Link key={item._id} to={ token ? '/services' : '/signIn'} onClick={() => handleChooseCar(item._id)} className='cars-wrapper'>
               <img src={item.image} alt="" className='cars_logo'/>
               <div className='cars-name'>{item.name}</div>
             </Link>
