@@ -1,6 +1,6 @@
 .mainProfile {
     margin-top: 83px;
-    height: 700px;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,21 @@
 .sidebar {
     width: 20%;
     height: 100%;
+    text-align: center;
     border-right: 1px solid black;
+    box-shadow: 1px 0px 3px 0px black;
+}
+
+.sidebar button {
+    display: block;
+    margin: 545px auto auto;
+}
+
+.name {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .cart {
