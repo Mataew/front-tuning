@@ -6,10 +6,10 @@ import { serviceReducer } from './features/reducerService';
 import { profilfeReducer } from './features/reducerProfile';
 import { carsReducer } from './features/reducerCars';
 import { cartsReducer } from './features/reducerCart';
+import { masterReducer } from './features/reducerMasters';
 
 
-
-const combineReducer = combineReducers({ application, serviceReducer, profilfeReducer, carsReducer, cartsReducer })
+const combineReducer = combineReducers({ application, serviceReducer, profilfeReducer, carsReducer, cartsReducer, masterReducer })
 
 const store = createStore(combineReducer, composeWithDevTools( applyMiddleware(thunk) ));
 

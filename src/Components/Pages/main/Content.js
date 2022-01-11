@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadCars } from '../../../redux/features/reducerCars';
-import { postCart } from '../../../redux/features/reducerCart'
+import { chooseAuto } from '../../../redux/features/reducerCart'
 import { Link } from 'react-router-dom';
 
 const Content = () => {
@@ -16,7 +16,7 @@ const Content = () => {
   }, [])
 
   const handleChooseCar = (auto) => {
-    token ? dispatch(postCart(auto)) : alert("Авторизируйтесь")
+    token ? dispatch(chooseAuto(auto)) : alert("Авторизируйтесь")
   }
 
   return (

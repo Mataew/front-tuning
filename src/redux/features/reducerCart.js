@@ -24,28 +24,11 @@ export const cartsReducer = (state = initialState, action) => {
   }
 };
 
-export const postCart = (auto) => {
+export const chooseAuto = (auto) => {
   return async (dispatch) => {
-    let optionPostCart = {
-      method: "POST",
-      body: JSON.stringify({ auto: auto }),
-      headers: {
-        "Content-type": "application/json",
-        Authorization: "Bearer" + localStorage.getItem("token"),
-      },
-    };
-
     try {
-      // await fetch("http://localhost:4000/cartToken", {
-      //   method: "POST",
-      //   body: JSON.stringify({ auto: auto }),
-      //   headers: {
-      //     "Content-type": "application/json",
-      //     Authorization: "Bearer " + localStorage.getItem("token"),
-      //   },
-      // });
-
       dispatch({ type: "cars/postCart/fulfilled", payload: auto });
+      console.log(auto)
     } catch (e) {
       console.log(e);
     }
@@ -55,13 +38,28 @@ export const postCart = (auto) => {
 
 export const chooseService = (serviceId) => {
   return async (dispatch) => {
-    
     try {
-     
       dispatch({type: 'cart/chooseService/fulfilled', payload: serviceId})
-
+      console.log(serviceId)
     } catch (e) {
       console.log(e);
     }
   };
 };
+
+export const postCart = (masters) => {
+  return async (dispatch) => {
+    try {
+      await fetch("http://localhost:4000/cartToken", {
+        method: "POST",
+        body: JSON.stringify({ master: masters, auto: initialState.auto, service: initialState.serviceId }),
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
+    } catch (e) {
+      console.log(e)
+    }
+  }
+}
