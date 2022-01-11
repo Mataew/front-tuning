@@ -1,6 +1,5 @@
 const initialState = {
   user: [],
-  cart: [],
 };
 
 export const profilfeReducer = (state = initialState, action) => {
