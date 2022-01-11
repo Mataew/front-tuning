@@ -7,6 +7,7 @@ import { profilfeReducer } from './features/reducerProfile';
 import { carsReducer } from './features/reducerCars';
 import { cartsReducer } from './features/reducerCart';
 import { masterReducer } from './features/reducerMasters';
+import { logger } from 'redux-logger/src';
 
 
 const combineReducer = combineReducers({ application, serviceReducer, profilfeReducer, carsReducer, cartsReducer, masterReducer })
