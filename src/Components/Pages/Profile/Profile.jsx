@@ -25,8 +25,6 @@ const Profile = () => {
         localStorage.removeItem("token")
         window.location.reload()
     }
-
-    console.log();
     
 
     return (
@@ -35,8 +33,8 @@ const Profile = () => {
                 {user.map((item) => {
                     return (<>
                         <h1>Мой профиль</h1>
-                        <span className='name'>{item.firstName}</span>
-                        <span className='name'>{item.lastName}</span>
+                        <span>{item.firstName}</span>
+                        <span>  {item.lastName}</span>
                         <h4>Номер телефона:</h4>
                         <span>{item.number}</span>
                         <button onClick={handleLogout}>Выйти</button>
