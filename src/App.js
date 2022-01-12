@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Main from './Components/Pages/main';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Layout } from './Components/Layout/Layout';
@@ -8,14 +8,26 @@ import SigninPage from './Components/Pages/Sign/SigninPage';
 import Service from './Components/Pages/Service/Service';
 import Profile from './Components/Pages/Profile/Profile';
 import SignupPage from './Components/Pages/Sign/SignupPage';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Masters from '../src/Components/Pages/Masters/Masters'
 import Accept from './Components/Pages/Accept/Accept';
+import { loadService } from './redux/features/reducerService';
+import { loadMaster } from './redux/features/reducerMasters';
+import { loadCars } from './redux/features/reducerCars';
 
 
 const App = () => {
 
   const token = useSelector(state => state.application.token)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(loadService())
+    dispatch(loadMaster())
+    dispatch(loadCars())
+  })
+ 
 
   if (!token){
     return (
