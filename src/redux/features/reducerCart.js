@@ -28,6 +28,11 @@ export const cartsReducer = (state = initialState, action) => {
             masters: action.payload
           }
         }
+        case 'cart/load/fullfilled':
+          return {
+            ...state,
+            carts: action.payload
+          }
     default:
       return state;
   }
@@ -79,6 +84,24 @@ export const postOrder = (cart) => {
       });
     } catch (e) {
       console.log(e)
+    }
+  }
+}
+
+
+export const cartLoad = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch("http://localhost:4000/cart", {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      })
+      const data = await response.json()
+      dispatch({type: 'cart/load/fullfilled', payload: data})
+    } catch (e) {
+      console.log(e);
     }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { cartLoad } from '../../../redux/features/reducerCart';
 import { userLoad } from '../../../redux/features/reducerProfile';
 import './Profile.css'
 
@@ -13,11 +14,20 @@ const Profile = () => {
 
     useEffect(() => {
         dispatch(userLoad(token))
+        dispatch(cartLoad())
     }, [])
 
     
 
     const user = useSelector(state => state.profilfeReducer.user)
+
+    const cart = useSelector(state => state.cartsReducer.carts)
+    const auto = useSelector(state => state.carsReducer.cars.find((item) => item._id === cart.auto))
+    const service = useSelector( state => state.serviceReducer.service.find((item) => item._id === cart.service))
+    const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.masters))
+
+
+    console.log(master);
 
 
     const handleLogout = () => {
@@ -42,6 +52,11 @@ const Profile = () => {
             </div>
             <div className="cart">
                 <h1>Мои заказы</h1>
+                <div> 
+                    <h1>{auto.name}</h1>
+                    <h2>{service.name}</h2>
+                    <h3></h3>
+                </div>
             </div>
         </div>
     )
