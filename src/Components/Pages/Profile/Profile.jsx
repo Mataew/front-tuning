@@ -19,7 +19,6 @@ const Profile = () => {
 
     const user = useSelector(state => state.profilfeReducer.user)
 
-    console.log(user);
 
     const handleLogout = () => {
         localStorage.removeItem("token")
@@ -37,7 +36,7 @@ const Profile = () => {
                         <span className='name'>  {item.lastName}</span>
                         <h4>Номер телефона:</h4>
                         <span>{item.number}</span>
-                        <button onClick={handleLogout}>Выйти</button>
+                        <button onClick={handleLogout}>Выход</button>
                         </>)
                 })}
             </div>
