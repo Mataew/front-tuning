@@ -65,7 +65,7 @@ export const createUser = (login, password, firstName, lastName, number) => {
     const json = await responce.json();
 
     if (json) {
-      dispatch({ type: "application/signup/rejected", error: json });
+      dispatch({ type: "application/signup/rejected", payload: json });
     } else {
       dispatch({ type: "application/signup/fulfiled", payload: json });
     }
