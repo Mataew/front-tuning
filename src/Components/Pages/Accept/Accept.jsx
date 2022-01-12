@@ -7,23 +7,19 @@ const Accept = () => {
   const cart = useSelector(state => state.cartsReducer.carts)
   console.log(cart)
 
-  const auto = useSelector(state => state.carsReducer.cars)
-  console.log(auto)
-  const service = useSelector( state => state.serviceReducer.service)
-  const master = useSelector(state => state.masterReducer.masters)
+  const auto = useSelector(state => state.carsReducer.cars.find((item) => item._id === cart.auto))
+  const service = useSelector( state => state.serviceReducer.service.find((item) => item._id === cart.service))
+  const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.master))
+  
+  console.log();
 
   return (
     <div className='accept'>
       <h1>Вы выбрали:</h1>
       <div>
         <div>
-          { auto.findOne((item) => {
-            if ( item._id === cart.auto){
-              return ( console.log('daun'))
-            }
-          })}
+         {auto.name}
         </div>
-
       </div>
     </div>
   );
