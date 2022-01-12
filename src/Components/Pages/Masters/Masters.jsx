@@ -33,8 +33,7 @@ const Masters = () => {
                 <div className="master_img">
                   <img width={180} height={140} src={item.image} alt="" />
                 </div>
-                <div className="master_price"><span className="master_span">цена за услуги :</span> {item.price}</div>
-                <div className="master_name"><span className="master_span">имя :</span> {item.name}</div>
+                <div className="master_name"><span className="master_span"></span> {item.name}</div>
                 <Link to="/accept" onClick={() => handleChoiceMaster(item._id)} className="master_btn">
                   Выбрать
                 </Link>

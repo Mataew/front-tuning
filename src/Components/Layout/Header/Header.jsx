@@ -9,8 +9,6 @@ const Header = () => {
 
   const token = useSelector(state => state.application.token)
 
-  console.log(token)
-
   return (
     <header>
       <div>

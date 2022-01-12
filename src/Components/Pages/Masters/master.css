@@ -29,17 +29,19 @@
 
 .master_price {
   margin-bottom: 10px;
-  color: red;
+  color: #007eff;
 }
 
 .master_name {
   margin-bottom: 10px;
-  color: red;
+  color: white;
+  padding: 10px 0px;
+  font-size: 25px;
 }
 
 .master_btn {
-  border: 1px solid #39ca10;
-  color: #39ca10;
+  border: 1px solid white;
+  color: white;
   background-color: rgb(43, 43, 43);
   text-decoration: none;
   padding: 5px 25px;
@@ -49,9 +51,9 @@
 }
 
 .master_btn:hover {
-  color: white;
-  background-color: #39ca10;
-  border: 1px solid #39ca10;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
   transition: 0.5s;
 }
 
