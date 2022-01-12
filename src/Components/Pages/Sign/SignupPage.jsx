@@ -23,9 +23,17 @@ const SignupPage = () => {
   const signingUp = useSelector((state) => state.application.signingUp);
   const error = useSelector((state) => state.application.error);
   const token = useSelector((state) => state.application.token);
+  const [NotEmail, setNotEmail] = useState("");
 
   const handleChangeLogin = (e) => {
     setLogin(e.target.value);
+    const valid =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!valid.test(String(e.target.value).toLowerCase())) {
+      setNotEmail("Некоректный емаил");
+    } else {
+      setNotEmail("");
+    }
   };
 
   const handleChangePassword = (e) => {
@@ -78,20 +86,20 @@ const SignupPage = () => {
     number === "" ? setBlurNumber(false) : setBlurNumber(true),
   ];
 
-
   return (
     <div className="SignUpMain">
       <div className="SignUpWindow">
         <h2 className="title">Регистрация</h2>
+        <span className="error">{NotEmail}</span>
         <div className="SignUpBlock">
           <TextField
             error={!blurLogin ? true : false}
             id={!blurLogin ? "outlined-error" : "outlined-basic"}
-            label={!blurLogin ? "Поле пустое!" : "Login"}
+            label={!blurLogin ? "Поле пустое!" : "Email"}
             variant="outlined"
             // className="loginINP"
             onBlur={handleBlurLogin}
-            type="text"
+            type="email"
             placeholder="Введите логин"
             value={login}
             onChange={(e) => handleChangeLogin(e)}
@@ -141,10 +149,7 @@ const SignupPage = () => {
           />
           {!blurFirstName ? (
             <div className="empty">
-              <span>
-                Поле ввода не должно
-                <br /> быть пустым
-              </span>
+              <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
@@ -165,10 +170,7 @@ const SignupPage = () => {
           />
           {!blurLastName ? (
             <div className="empty">
-              <span>
-                Поле ввода не должно
-                <br /> быть пустым
-              </span>
+              <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
@@ -189,10 +191,7 @@ const SignupPage = () => {
           />
           {!blurNumber ? (
             <div className="empty">
-              <span>
-                Поле ввода не должно
-                <br /> быть пустым
-              </span>
+              <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
@@ -212,7 +211,17 @@ const SignupPage = () => {
           </label>
         </div> */}
         <button
-          className="RegisterBTN"
+          className={
+            !login ||
+            !password ||
+            !firstName ||
+            !lastName ||
+            !number ||
+            signingUp ||
+            NotEmail
+              ? "NotRegisterBTN"
+              : "RegisterBTN"
+          }
           onClick={handleSubmit}
           disabled={
             !login ||
@@ -220,13 +229,13 @@ const SignupPage = () => {
             !firstName ||
             !lastName ||
             !number ||
-            signingUp
+            signingUp ||
+            NotEmail
           }
         >
           Зарегистрироваться
         </button>
-        <div className={!error ? "NoEmpty" : "BlockError"}>
-        </div>
+        <div className={!error ? "NoEmpty" : "BlockError"}></div>
         <div className="BackLinkBlock">
           <Link className="LinkMain" to="/signIn">
             <button className="Back">⬅Назад</button>
