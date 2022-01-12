@@ -13,6 +13,8 @@ const Accept = () => {
   const service = useSelector( state => state.serviceReducer.service.find((item) => item._id === cart.service))
   const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.masters))
   
+
+
   const acceptOrder = (cart) => {
     dispatch(postOrder(cart))
   }
