@@ -1,5 +1,6 @@
 .SignUpBlock {
   text-align: center;
+  align-items: center;
   padding: 1%;
   margin-top: 60px;
   height: 25px;
@@ -11,18 +12,22 @@
   height: 25px;
 }
 
-.SignInMain {
-    /* background-image: url(../../../assets/fon-company.jpg); */
-    background-image: url(https://img5.goodfon.ru/wallpaper/nbig/5/2a/futuristic-car-fon-futuresynth-outrun-vid-sboku-neon-mashina.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 800px;
-    margin: auto;
-    margin-top: 75px;
-    text-align: center;
-  }
+.NotRegisterBTN {
+  margin-top: 100px;
+  width: 25%;
+  height: 25px;
+}
 
+.SignInMain {
+   background-image: url(https://s1.1zoom.ru/big0/169/Lamborghini_2021_Aventador_LP_780-4_Ultimae_Silver_608205_1280x853.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 800px;
+  margin: auto;
+  margin-top: 75px;
+  text-align: center;
+}
 
 .passwordINP {
   margin-top: 50px;
@@ -44,6 +49,13 @@
   background-color: green;
   transition: 1s;
   box-shadow: inset 0 0 0 23px #53ea93;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.NotRegisterBTN:hover {
+  transition: 1s;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -92,9 +104,19 @@
 }
 
 .SignUpWindow {
-    height: 650px;
-    width: 60%;
-    margin: auto;
-    background-color: whitesmoke;
-    opacity: 0.90;
-  }
+  height: 650px;
+  width: 60%;
+  margin: auto;
+  background-color: whitesmoke;
+  opacity: 0.9;
+}
+
+.passwordIcon {
+  width: 75px;
+  height: 60px;
+}
+
+.loginIcon {
+  width: 60px;
+  height: 55px;
+}
