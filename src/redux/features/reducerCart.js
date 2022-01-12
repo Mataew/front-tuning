@@ -25,7 +25,7 @@ export const cartsReducer = (state = initialState, action) => {
           ...state,
           carts: {
             ...state.carts,
-            masters: action.payload
+            master: action.payload
           }
         }
         case 'cart/load/fullfilled':
