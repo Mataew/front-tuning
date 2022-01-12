@@ -95,27 +95,6 @@
   border: 2px solid #000000;
 }
 
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"),
-    url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff)
-      format("woff");
-}
-
-.title {
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 15px;
-}
-.title {
-  color: white;
-  text-shadow: 0 0 5px #007eff, 0 0 10px #007eff, 0 0 20px #007eff,
-    0 0 40px #007eff, 0 0 80px #007eff, 0 0 90px #007eff, 0 0 100px #0000ff,
-    0 0 150px #0000ff;
-}
-
 .SignUpMain {
   /* background-image: url(../../../assets/fon-company.jpg); */
   background-image: url(https://s1.1zoom.ru/big0/169/Lamborghini_2021_Aventador_LP_780-4_Ultimae_Silver_608205_1280x853.jpg);
@@ -142,29 +121,14 @@
   margin-left: 200px;
 }
 
-.service_image {
-  transition: 1s; /* Время эффекта */
- }
- .service_image:hover {
-  transform: scale(1.2); /* Увеличиваем масштаб */
- }
-
- .company-img {
-   transition: 1s;
- }
-
- .company-img:hover {
-   transform: scale(1.2);
- }
-
- .company-carts-item {
-  transition: 1s;
-}
-
-.company-carts-item:hover {
-  transform: scale(1.2);
-}
-
 .error {
   color: red;
+}
+
+.title {
+  color: black;
+}
+
+.titleBlock {
+  padding-top: 25px;
 }

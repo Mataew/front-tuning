@@ -57,7 +57,9 @@ const SigninPage = () => {
           <img className="signImg" src="https://gidfon.com/prev/33495.jpg" alt="" />
           </div>
         </div> */}
+        <div className="titleBlock">
         <h2 className="title">Вход</h2>
+        </div>
         {!NotEmail ? (
           <span className="error">{error}</span>
         ) : (
