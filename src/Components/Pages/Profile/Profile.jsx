@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadCars } from '../../../redux/features/reducerCars';
 import { cartLoad } from '../../../redux/features/reducerCart';
+import { loadMaster } from '../../../redux/features/reducerMasters';
 import { userLoad } from '../../../redux/features/reducerProfile';
 import { loadService } from '../../../redux/features/reducerService'
 import './Profile.css'
@@ -18,6 +19,8 @@ const Profile = () => {
         dispatch(userLoad(token))
         dispatch(cartLoad())
        
+           
+        
     }, [])
 
     
@@ -27,10 +30,10 @@ const Profile = () => {
     const cart = useSelector(state => state.cartsReducer.carts)
     const auto = useSelector(state => state.carsReducer.cars.find((item) => item._id === cart.auto))
     const service = useSelector( state => state.serviceReducer.service.find((item) => item._id === cart.service))
-    const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.masters))
+    const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.master))
 
 
-console.log(auto);
+console.log(service);
 
     const handleLogout = () => {
         localStorage.removeItem("token")
@@ -54,10 +57,10 @@ console.log(auto);
             </div>
            <div className="cart">
                 <h1>Мои заказы</h1>
-               { auto && service  ? <div> 
-                    <h1>{auto.name}</h1>
+               {auto && service && master? <div className='cart_card'> 
+                    <h2>{auto.name}</h2>
                     <h2>{service.name}</h2>
-                    <h3>{master.name}</h3>
+                    <h2>{master.name}</h2>
                 </div> : <div>нет товаров</div>}
             </div>
         </div>
