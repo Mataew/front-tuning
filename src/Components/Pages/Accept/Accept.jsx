@@ -1,24 +1,39 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import './style.css'
+import { useDispatch, useSelector } from 'react-redux';
+import './accept-style.css'
+import { Link } from 'react-router-dom';
+import { postOrder } from '../../../redux/features/reducerCart';
 
 const Accept = () => {
 
-  const cart = useSelector(state => state.cartsReducer.carts)
-  console.log(cart)
+  const dispatch = useDispatch()
 
+  const cart = useSelector(state => state.cartsReducer.carts)
   const auto = useSelector(state => state.carsReducer.cars.find((item) => item._id === cart.auto))
   const service = useSelector( state => state.serviceReducer.service.find((item) => item._id === cart.service))
-  const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.master))
+  const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.masters))
   
-  console.log();
+  const acceptOrder = (cart) => {
+    dispatch(postOrder(cart))
+  }
 
   return (
     <div className='accept'>
-      <h1>Вы выбрали:</h1>
-      <div>
-        <div>
-         {auto.name}
+      <div className='selected'>
+        <div className='choosen_auto'>
+          <div className='choosen_auto_name'>Авто: <span style={{color: 'red'}}> { auto.name }</span> </div>
+          <div className='wrapper-image'><div className='choosen_auto_wrapper_img'><img className='choosen_auto_img' src={ auto.image }/></div></div>
+        </div>
+        <div className='choosen_service'>
+          <div className='choosen_service_name'>Услуга: <span style={{color: 'red'}}> { service.name }</span> </div>
+          <div className='wrapper-image'><div className='choosen_auto_wrapper_img'><img className='choosen_auto_img' src={ service.img }/></div></div>
+        </div>
+        <div className='choosen_master'>
+          <div className='choosen_master_name'>Мастер: <span style={{color: 'red'}}> { master.name }</span> </div>
+          <div className='wrapper-image'><div className='choosen_auto_wrapper_img'><img className='choosen_auto_img' src={ master.image }/></div></div>
+        </div>
+        <div className='accept_button_wrapper'>
+          <Link className='accept_button' onClick={() => acceptOrder(cart)} to='/profile'>Подтвердить заказ</Link>
         </div>
       </div>
     </div>
