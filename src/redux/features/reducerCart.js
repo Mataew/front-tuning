@@ -66,11 +66,19 @@ export const chooseMaster = (masters) => {
   }
 }
 
-// await fetch("http://localhost:4000/cartToken", {
-//         method: "POST",
-//         body: JSON.stringify({ masters: masters, auto: initialState.carts.auto }),
-//         headers: {
-//           "Content-type": "application/json",
-//           Authorization: "Bearer " + localStorage.getItem("token"),
-//         },
-//       });
+export const postOrder = (cart) => {
+  return async (dispatch) => {
+    try {
+      await fetch("http://localhost:4000/cartToken", {
+        method: "POST",
+        body: JSON.stringify( cart ),
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
+    } catch (e) {
+      console.log(e)
+    }
+  }
+}
