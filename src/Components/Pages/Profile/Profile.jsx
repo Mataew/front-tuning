@@ -27,8 +27,7 @@ const Profile = () => {
     const master = useSelector(state => state.masterReducer.masters.find((item) => item._id === cart.masters))
 
 
-    console.log(master);
-
+console.log(auto);
 
     const handleLogout = () => {
         localStorage.removeItem("token")
@@ -50,13 +49,13 @@ const Profile = () => {
                         </>)
                 })}
             </div>
-            <div className="cart">
+           <div className="cart">
                 <h1>Мои заказы</h1>
-                <div> 
+               { auto && service  ? <div> 
                     <h1>{auto.name}</h1>
                     <h2>{service.name}</h2>
                     <h3></h3>
-                </div>
+                </div> : <div>нет товаров</div>}
             </div>
         </div>
     )
