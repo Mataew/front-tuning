@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { loadCars } from '../../../redux/features/reducerCars';
 import { cartLoad } from '../../../redux/features/reducerCart';
 import { userLoad } from '../../../redux/features/reducerProfile';
+import { loadService } from '../../../redux/features/reducerService'
 import './Profile.css'
 
 const Profile = () => {
@@ -15,6 +17,7 @@ const Profile = () => {
     useEffect(() => {
         dispatch(userLoad(token))
         dispatch(cartLoad())
+       
     }, [])
 
     
@@ -54,7 +57,7 @@ console.log(auto);
                { auto && service  ? <div> 
                     <h1>{auto.name}</h1>
                     <h2>{service.name}</h2>
-                    <h3></h3>
+                    <h3>{master.name}</h3>
                 </div> : <div>нет товаров</div>}
             </div>
         </div>
