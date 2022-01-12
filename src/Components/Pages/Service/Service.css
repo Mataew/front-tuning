@@ -17,6 +17,10 @@
     position: relative;
 }
 
+.service_image img {
+    width: 100%;
+}
+
 .service_cart {
     margin-top: 30px;
     width: 400px;
@@ -27,5 +31,5 @@
 }
 
 .sevice_btn {
- 
+ text-decoration: none;
 }
