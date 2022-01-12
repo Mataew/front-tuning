@@ -3,33 +3,64 @@
 }
 
 .master_main {
+  width: 100%;
+  background-color: #333;
+}
+
+.master_wrapper {
+  text-align: center;
   margin: auto;
   margin-top: 10%;
-  text-align: center;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+  color: white;
 }
 
 .master_flex_blocks {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
+  padding-bottom: 9.6%;
 }
 
 .master_block {
-  border: 2px solid black;
   text-align: center;
 }
 
 .master_price {
   margin-bottom: 10px;
+  color: red;
 }
 
 .master_name {
   margin-bottom: 10px;
+  color: red;
 }
 
 .master_btn {
-  width: 100%;
-  border: 1px solid black;
+  border: 1px solid #39ca10;
+  color: #39ca10;
+  background-color: rgb(43, 43, 43);
+  text-decoration: none;
+  padding: 5px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.master_btn:hover {
   color: white;
-  background-color: blue;
+  background-color: #39ca10;
+  border: 1px solid #39ca10;
+  transition: 0.5s;
+}
+
+.master_hr {
+  width: 70%;
+  border-bottom: 2px solid white;
+}
+
+
+.master_span {
+  color: white;
 }

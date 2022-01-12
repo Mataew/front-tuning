@@ -21,19 +21,20 @@ const Masters = () => {
 
   return (
     <div className="master_main">
+      <div className="master_wrapper">
       <h1>Мастера меча онлайн</h1>
       <h2>Выберите своего мастера</h2>
-      <hr />
+      <hr className="master_hr" />
       <div className="master_flex_blocks">
         {masters.map((item, index) => {
           return (
             <>
               <div className="master_block">
                 <div className="master_img">
-                  <img width={180} height={160} src={item.image} alt="" />
+                  <img width={180} height={140} src={item.image} alt="" />
                 </div>
-                <div className="master_price"> цена за услуги {item.price}</div>
-                <div className="master_name"> имя {item.name}</div>
+                <div className="master_price"><span className="master_span">цена за услуги :</span> {item.price}</div>
+                <div className="master_name"><span className="master_span">имя :</span> {item.name}</div>
                 <Link to="/accept" onClick={() => handleChoiceMaster(item._id)} className="master_btn">
                   Выбрать
                 </Link>
@@ -41,6 +42,7 @@ const Masters = () => {
             </>
           );
         })}
+      </div>
       </div>
     </div>
   );
