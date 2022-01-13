@@ -1,39 +1,37 @@
 .SignUpBlock {
   text-align: center;
   padding: 1%;
-  /*margin-top: 5%;*/
   height: 25px;
   align-items: center;
 }
 
 .signInBlock {
-  /* background-image: url(../../../assets/fon-company.jpg); */
   background-color: blue;
 }
 
-/*.passwordINP {*/
-/*    width: 25%;*/
-/*    height: 30px;*/
-/*    border-radius: 15px;*/
-/*    border: 2px solid black;*/
-/*}*/
-
-/*.loginINP {*/
-/*    width: 25%;*/
-/*    height: 30px;*/
-/*    border-radius: 15px;*/
-/*    border: 2px solid black;*/
-/*}*/
-
 .SignInWindow {
+  opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 0.5s; /*Скорость перехода состояния элемента*/
+    animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 0.3s; /* Задержка перед началом */
+
   height: 500px;
   width: 60%;
   margin: auto;
   margin-top: 100px;
   background-color: whitesmoke;
-  opacity: 0.9;
   color: blue;
 }
+@keyframes show{
+  0%{
+  opacity:0;
+  padding-left: 500px;
+  }
+  100% {
+  opacity:1;
+  }
+  }
 
 .empty {
   color: red;
@@ -96,12 +94,9 @@
 }
 
 .SignUpMain {
-  /* background-image: url(../../../assets/fon-company.jpg); */
-  background-image: url(https://s1.1zoom.ru/big0/169/Lamborghini_2021_Aventador_LP_780-4_Ultimae_Silver_608205_1280x853.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-color: #333333;
   width: 100%;
-  height: 800px;
+  height: 675px;
   margin: auto;
   margin-top: 75px;
   text-align: center;
@@ -123,6 +118,11 @@
 
 .error {
   color: red;
+  opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 0.5s; /*Скорость перехода состояния элемента*/
+    animation: show 6s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 0.3s; /* Задержка перед началом */
 }
 
 .title {

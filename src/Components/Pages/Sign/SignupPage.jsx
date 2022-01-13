@@ -30,7 +30,7 @@ const SignupPage = () => {
     const valid =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (!valid.test(String(e.target.value).toLowerCase())) {
-      setNotEmail("Некоректный емаил");
+      setNotEmail("Некорректный емаил");
     } else {
       setNotEmail("");
     }
@@ -87,10 +87,16 @@ const SignupPage = () => {
   ];
 
   return (
+    
     <div className="SignUpMain">
       <div className="SignUpWindow">
+      <div className="BackLinkBlock">
+          <Link className="LinkMain" to="/signIn">
+            <button className="Back">⬅</button>
+          </Link>
+        </div>
         <h2 className="title">Регистрация</h2>
-        <span className="error">{NotEmail}</span>
+        {/* <div className="error">{NotEmail}</div> */}
         <div className="SignUpBlock">
           <TextField
             error={!blurLogin ? true : false}
@@ -104,13 +110,14 @@ const SignupPage = () => {
             value={login}
             onChange={(e) => handleChangeLogin(e)}
           />
-          {!blurLogin ? (
+          <div className="error">{NotEmail}</div>
+          {/* {!blurLogin ? (
             <div className="empty">
               <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         <div className="SignUpBlock">
           <TextField
@@ -125,13 +132,13 @@ const SignupPage = () => {
             value={password}
             onChange={(e) => handleChangePassword(e)}
           />
-          {!blurPassword ? (
+          {/* {!blurPassword ? (
             <div className="empty">
               <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         {/* <div className="mainINP"> */}
         <div className="SignUpBlock">
@@ -147,13 +154,13 @@ const SignupPage = () => {
             value={firstName}
             onChange={(e) => handleChangeName(e)}
           />
-          {!blurFirstName ? (
+          {/* {!blurFirstName ? (
             <div className="empty">
               <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         <div className="SignUpBlock">
           <TextField
@@ -168,13 +175,13 @@ const SignupPage = () => {
             value={lastName}
             onChange={(e) => handleChangeLastName(e)}
           />
-          {!blurLastName ? (
+          {/* {!blurLastName ? (
             <div className="empty">
               <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         <div className="SignUpBlock">
           <TextField
@@ -189,13 +196,13 @@ const SignupPage = () => {
             value={number}
             onChange={(e) => handleChangeNumber(e)}
           />
-          {!blurNumber ? (
+          {/* {!blurNumber ? (
             <div className="empty">
               <span>Поле ввода не должно быть пустым</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
         </div>
         {/* <div className="input__wrapper">
           <input
@@ -236,11 +243,6 @@ const SignupPage = () => {
           Зарегистрироваться
         </button>
         <div className={!error ? "NoEmpty" : "BlockError"}></div>
-        <div className="BackLinkBlock">
-          <Link className="LinkMain" to="/signIn">
-            <button className="Back">⬅Назад</button>
-          </Link>
-        </div>
       </div>
     </div>
     // </div>

@@ -19,11 +19,9 @@
 }
 
 .SignInMain {
-   background-image: url(https://s1.1zoom.ru/big0/169/Lamborghini_2021_Aventador_LP_780-4_Ultimae_Silver_608205_1280x853.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-color: #333333;
   width: 100%;
-  height: 800px;
+  height: 675px;
   margin: auto;
   margin-top: 75px;
   text-align: center;
@@ -63,6 +61,11 @@
 
 .empty {
   color: red;
+  opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 0.5s; /*Скорость перехода состояния элемента*/
+    animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 0.3s; /* Задержка перед началом */
 }
 
 .NoEmpty {
@@ -71,6 +74,7 @@
 
 .BackLinkBlock {
   margin-top: 25px;
+  margin-right:100%;
 }
 
 .Back:hover {
@@ -104,12 +108,27 @@
 }
 
 .SignUpWindow {
+    
+    opacity:0; /*Элемент полностью прозрачный (невидимый)*/
+    transition: 0.5s; /*Скорость перехода состояния элемента*/
+    animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
+    animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+    animation-delay: 0.3s; /* Задержка перед началом */
+
   height: 650px;
   width: 60%;
   margin: auto;
   background-color: whitesmoke;
-  opacity: 0.9;
 }
+@keyframes show{
+  0%{
+  opacity:0;
+  padding-left: 500px;
+  }
+  100% {
+  opacity:1;
+  }
+  }
 
 .passwordIcon {
   width: 75px;
