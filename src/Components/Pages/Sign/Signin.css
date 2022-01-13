@@ -16,10 +16,10 @@
     animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
     animation-delay: 0.3s; /* Задержка перед началом */
 
-  height: 500px;
   width: 60%;
   margin: auto;
-  margin-top: 100px;
+  /*margin-top: 7%;*/
+  padding-bottom: 2%;
   background-color: whitesmoke;
   color: blue;
 }

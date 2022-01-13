@@ -26,21 +26,29 @@ header{
 }
 .center-nav span{
   color: white;
-  min-width: 40%;
-  width: 45%;
+  /*min-width: 40%;*/
+  width: 56%;
   display: flex;   /*   стиль для того чтобы дать ширину центральной навигации   */
   justify-content: space-between;
 }
 .center-nav a{
   text-decoration: none;
   color: white;
+  padding: 10px 0px;
 }
 .center-nav li{
   padding: 5px 15px;
   border-bottom: 2px solid white;
 }
 
+.center-nav a:hover{
+  color: black;
+  transition: 0.5s;
+}
 .center-nav li:hover{
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }
 
 

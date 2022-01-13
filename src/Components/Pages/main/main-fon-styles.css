@@ -18,6 +18,9 @@
   color: white;
   transition: 0.5s;
 }
+.video button a{
+  padding: 0px 150px;
+}
 .bgvideo {
   position: absolute;
   right: 0;

@@ -62,12 +62,11 @@ const Profile = () => {
             <h2>Услуга: {service.name}</h2>
             <h2>Мастер: {master.name}</h2>
             <span className="cart-price">
-              {" "}
-              Итого: {master.price * service.time * auto.coefficient}₽
+              Итого: <span style={{color: 'red'}}>{master.price * service.time * auto.coefficient}₽</span>
             </span>
           </div>
         ) : (
-          <div>нет товаров</div>
+          <div>Нет заказов</div>
         )}
       </div>
     </div>
