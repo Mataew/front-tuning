@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  font-family: 'Spartan', sans-serif;
+  font-family: 'Spartan','Comfortaa', sans-serif;
   font-weight: bold;
 }
 body{
@@ -15,4 +15,5 @@ h1 {
   height: 100%;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Hind:wght@300&family=Manrope:wght@200&family=Spartan:wght@300&family=The+Nautigal&family=Varela+Round&family=Vujahday+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Manrope:wght@200&family=Spartan:wght@300&family=The+Nautigal&family=Varela+Round&family=Vujahday+Script&display=swap");
