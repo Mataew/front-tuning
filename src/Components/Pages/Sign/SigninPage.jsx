@@ -52,11 +52,6 @@ const SigninPage = () => {
   return (
     <div className="SignInMain">
       <div className="SignInWindow">
-        {/* <div className="signIn">
-          <div className="BlockSignImg">
-          <img className="signImg" src="https://gidfon.com/prev/33495.jpg" alt="" />
-          </div>
-        </div> */}
         <div className="titleBlock">
         <h2 className="title">Вход</h2>
         </div>
@@ -101,8 +96,6 @@ const SigninPage = () => {
         >
           Войти
         </Button>
-
-        {/* <div className={!token ? "NoEmpty" : "BlockError"}>{error}</div> */}
         <div className="SigninBlock">
           <span className="textOne">Не зарегистрированы ?</span>
           <Link className="Link" to="/signUp">
@@ -110,9 +103,6 @@ const SigninPage = () => {
           </Link>
         </div>
         <div className="MainLinkBlock">
-          {/* <Link className="LinkMain" to="/">
-            <button className="getMain">На главную меню</button>
-          </Link> */}
         </div>
       </div>
     </div>
