@@ -16,14 +16,20 @@
 .sidebar button {
     display: block;
     margin: 154% auto auto;
-    border: none;
+    color: red;
+    border: 1px solid red;
     background-color: inherit;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 15px;
+    padding: 2px 10px;
 }
 
 .sidebar button:hover {
-    color: red;
+    color: white;
+    border: 1px solid red;
+    background-color: red;
+    transition: 0.5s;
 }
 
 .name {
@@ -41,7 +47,26 @@
 }
 
 .cart_card {
+    width: 700px;
     background-color: white;
     color: black;
     margin: 10px auto;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.cart-deleteButton {
+    margin: 10px 0 0 650px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.cart-deleteButton:hover {
+    color: red;
+}
+
+.cart-price {
+    box-sizing: border-box;
+    margin: 50px 0 0 480px;
 }
