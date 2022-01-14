@@ -2,7 +2,7 @@
 
 ## Недельный командный проект
 
-### Сайт для тюнинга ателье
+### Сайт для тюнинг-ателье сервиса
 
 ![image](https://github.com/buguz228/front-tuning/blob/main/src/assets/proect.gif)
 
