@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../../../redux/features/reducerSign";
 import "./SignUp.css";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 
 const SignupPage = () => {
   const dispatch = useDispatch();
@@ -87,14 +87,8 @@ const SignupPage = () => {
   ];
 
   return (
-    
     <div className="SignUpMain">
       <div className="SignUpWindow">
-      <div className="BackLinkBlock">
-          {/* <Link className="LinkMain" to="/signIn">
-            <button className="Back">⬅</button>
-          </Link> */}
-        </div>
         <h2 className="title">Регистрация</h2>
         {/* <div className="error">{NotEmail}</div> */}
         <div className="SignUpBlock">

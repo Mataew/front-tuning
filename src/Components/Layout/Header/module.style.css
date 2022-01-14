@@ -1,4 +1,4 @@
-header{
+header {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -11,51 +11,50 @@ header{
   /*background-image: url("https://i.pinimg.com/originals/06/7f/ce/067fcedda7b268a86c83418720b029ee.jpg");*/
 }
 
-.logo{
+.logo {
   /*min-width: 10%;*/
   width: 250px; /* стиль для лого  */
 }
 
-.center-nav{
-  display: flex;   /*    стиль для центральной навигации     */
+.center-nav {
+  display: flex; /*    стиль для центральной навигации     */
   list-style: none;
   flex: 1;
   margin-left: 100px;
   font-size: 110%;
   justify-content: space-between;
 }
-.center-nav span{
+.center-nav span {
   color: white;
   /*min-width: 40%;*/
   width: 56%;
-  display: flex;   /*   стиль для того чтобы дать ширину центральной навигации   */
+  display: flex; /*   стиль для того чтобы дать ширину центральной навигации   */
   justify-content: space-between;
 }
-.center-nav a{
+.center-nav a {
   text-decoration: none;
   color: white;
   padding: 10px 0px;
 }
-.center-nav li{
+.center-nav li {
   padding: 5px 15px;
   border-bottom: 2px solid white;
 }
 
-.center-nav a:hover{
+.center-nav a:hover {
   color: black;
   transition: 0.5s;
 }
-.center-nav li:hover{
+.center-nav li:hover {
   background-color: white;
   color: black;
   transition: 0.5s;
 }
 
-
-.right-nav{
+.right-nav {
   color: white; /*    стиль для центральной навигации     */
 }
-.right-nav a{
+.right-nav a {
   font-size: 23px;
   padding: 5px 25px;
   border: 1px solid #007eff;
@@ -63,8 +62,8 @@ header{
   color: #007eff;
   border-radius: 10px;
 }
-.right-nav a:hover{
+.right-nav a:hover {
   background-color: #007eff;
   color: white;
-  transition: 0.5s  ;
+  transition: 0.5s;
 }

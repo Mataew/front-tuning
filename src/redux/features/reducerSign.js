@@ -2,7 +2,7 @@ const initialStateSign = {
   signingUp: false,
   signingIn: false,
   error: null,
-  token: localStorage.getItem("token")
+  token: localStorage.getItem("token"),
 };
 
 export default function application(state = initialStateSign, action) {
@@ -17,7 +17,7 @@ export default function application(state = initialStateSign, action) {
       return {
         ...state,
         signingUp: false,
-        error:null
+        error: null,
       };
     case "application/signup/rejected":
       return {
@@ -25,26 +25,26 @@ export default function application(state = initialStateSign, action) {
         signingUp: false,
         error: action.error,
       };
-      case "application/signin/pending":
-        return {
-          ...state,
-          signingIn: true,
-          error: null,
-        };
-      case "application/signin/fulfiled":
-        return {
-          ...state,
-          signingIn: false,
-          token: action.payload,
-          error: action.error
-        };
-      case "application/signin/rejected":
-        return {
-          ...state,
-          signingIn: false,
-          error: action.error,
-        };
-      
+    case "application/signin/pending":
+      return {
+        ...state,
+        signingIn: true,
+        error: null,
+      };
+    case "application/signin/fulfiled":
+      return {
+        ...state,
+        signingIn: false,
+        token: action.payload,
+        error: action.error,
+      };
+    case "application/signin/rejected":
+      return {
+        ...state,
+        signingIn: false,
+        error: action.error,
+      };
+
     default:
       return state;
   }
@@ -73,7 +73,7 @@ export const createUser = (login, password, firstName, lastName, number) => {
 };
 
 export const auth = (login, password) => {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch({ type: "application/signin/pending" });
 
     const responce = await fetch("http://localhost:4000/login", {
@@ -86,13 +86,17 @@ export const auth = (login, password) => {
     });
 
     const json = await responce.json();
-    console.log(json)
+    console.log(json);
 
     if (responce.status === 401) {
       dispatch({ type: "application/signin/rejected", error: json });
     } else {
-      dispatch({ type: "application/signin/fulfiled", payload: json.token, error: json.error });
-      localStorage.setItem("token", json.token)
+      dispatch({
+        type: "application/signin/fulfiled",
+        payload: json.token,
+        error: json.error,
+      });
+      localStorage.setItem("token", json.token);
     }
-  }
-}
+  };
+};

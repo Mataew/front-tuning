@@ -2,7 +2,6 @@ import "./Service.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { userLoad } from "../../../redux/features/reducerProfile";
 import { loadService } from "../../../redux/features/reducerService";
 import { Link } from "react-router-dom";
 import { chooseService } from "../../../redux/features/reducerCart";
@@ -10,10 +9,8 @@ import { chooseService } from "../../../redux/features/reducerCart";
 const Service = () => {
   const services = useSelector((state) => state.serviceReducer.service);
 
-  // const carts = useSelector(state => state.cartsReducer.carts)
-
-  
-  const token = useSelector(state => state.application.token)
+  const cart = useSelector((state) => state.cartsReducer.carts);
+  const token = useSelector((state) => state.application.token);
 
   // useEffect(() => {
   //     dispatch(userLoad(token))
@@ -33,7 +30,7 @@ const Service = () => {
   }, [dispatch]);
 
   const handleChooseService = (serviceId) => {
-    token ? dispatch(chooseService(serviceId)) : alert('Авторизируйтесь')
+    token ? dispatch(chooseService(serviceId)) : alert("Авторизируйтесь");
   };
 
   return (
@@ -49,7 +46,7 @@ const Service = () => {
                 </div>
                 <div className="service_name">{item.name}</div>
                 <Link
-                  to={ token ? '/masters' : ''}
+                  to={ token ? "/masters" : ""}
                   className="sevice_btn"
                   onClick={() => handleChooseService(item._id)}
                 >
