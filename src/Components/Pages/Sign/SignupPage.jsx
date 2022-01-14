@@ -89,11 +89,6 @@ const SignupPage = () => {
   return (
     <div className="SignUpMain">
       <div className="SignUpWindow">
-        <div className="BackLinkBlock">
-          <Link className="LinkMain" to="/signIn">
-            <button className="Back">⬅</button>
-          </Link>
-        </div>
         <h2 className="title">Регистрация</h2>
         {/* <div className="error">{NotEmail}</div> */}
         <div className="SignUpBlock">
@@ -216,7 +211,9 @@ const SignupPage = () => {
             </span>
           </label>
         </div> */}
+        <Link className="LinkMain" to="/signIn">
         <button
+            
           className={
             !login ||
             !password ||
@@ -241,6 +238,7 @@ const SignupPage = () => {
         >
           Зарегистрироваться
         </button>
+        </Link>
         <div className={!error ? "NoEmpty" : "BlockError"}></div>
       </div>
     </div>
