@@ -43,7 +43,7 @@ const SigninPage = () => {
 
   const handleBlurLogin = () => {
     login === "" ? setBlurLogin(false) : setBlurLogin(true);
-  }
+  };
 
   const handleBlurPassword = () => {
     password === "" ? setBlurPassword(false) : setBlurPassword(true);
@@ -53,7 +53,7 @@ const SigninPage = () => {
     <div className="SignInMain">
       <div className="SignInWindow">
         <div className="titleBlock">
-        <h2 className="title">Вход</h2>
+          <h2 className="title">Вход</h2>
         </div>
         {!NotEmail ? (
           <span className="error">{error}</span>
@@ -102,8 +102,7 @@ const SigninPage = () => {
             Зарегистрироваться
           </Link>
         </div>
-        <div className="MainLinkBlock">
-        </div>
+        <div className="MainLinkBlock"></div>
       </div>
     </div>
   );

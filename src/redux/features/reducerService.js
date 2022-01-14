@@ -1,23 +1,23 @@
 const initialState = {
   service: [],
-  loading: false
+  loading: false,
 };
 
 export const serviceReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'service/load/fulfilled':  
-    return{
+    case "service/load/fulfilled":
+      return {
         ...state,
         service: action.payload,
-        loading: false
+        loading: false,
       };
-      case 'service/load/pending':
-          return{
-              ...state,
-              loading: true
-          }
-          default:
-              return state
+    case "service/load/pending":
+      return {
+        ...state,
+        loading: true,
+      };
+    default:
+      return state;
   }
 };
 

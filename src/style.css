@@ -1,17 +1,17 @@
-*{
+* {
   box-sizing: border-box;
-  font-family: 'Spartan','Comfortaa', sans-serif;
+  font-family: "Spartan", "Comfortaa", sans-serif;
   font-weight: bold;
 }
-body{
+body {
   margin: 0;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   height: 100%;
 }
 h1 {
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 }
-#root{
+#root {
   height: 100%;
 }
 

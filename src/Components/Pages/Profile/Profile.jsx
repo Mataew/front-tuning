@@ -57,12 +57,17 @@ const Profile = () => {
         <h1>Мои заказы</h1>
         {auto && service && master ? (
           <div className="cart_card">
-            <button className="cart-deleteButton" onClick={handleDeleteCart}>⨉</button>
+            <button className="cart-deleteButton" onClick={handleDeleteCart}>
+              ⨉
+            </button>
             <h2>Ваше авто: {auto.name}</h2>
             <h2>Услуга: {service.name}</h2>
             <h2>Мастер: {master.name}</h2>
             <span className="cart-price">
-              Итого: <span style={{color: 'red'}}>{master.price * service.time * auto.coefficient}₽</span>
+              Итого:{" "}
+              <span style={{ color: "red" }}>
+                {master.price * service.time * auto.coefficient}₽
+              </span>
             </span>
           </div>
         ) : (
