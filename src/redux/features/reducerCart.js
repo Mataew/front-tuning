@@ -33,6 +33,11 @@ export const cartsReducer = (state = initialState, action) => {
         ...state,
         carts: action.payload,
       };
+    case "cart/postCart/fulfilled":
+      return {
+        ...state,
+        carts: action.payload
+      }
     case "cart/delete/fulfilled":
       return {
         ...state,
@@ -78,7 +83,7 @@ export const chooseMaster = (masters) => {
 export const postOrder = (cart) => {
   return async (dispatch) => {
     try {
-      await fetch("http://localhost:4000/cartToken", {
+     const f = await fetch("http://localhost:4000/cartToken", {
         method: "POST",
         body: JSON.stringify(cart),
         headers: {
@@ -86,6 +91,8 @@ export const postOrder = (cart) => {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
+     const b = await f.json();
+      dispatch({type: 'cart/postCart/fulfilled', payload: b});
     } catch (e) {
       console.log(e);
     }
